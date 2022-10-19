@@ -1,0 +1,26 @@
+.extra-navbar-container {
+  display: flex;
+  padding-top: 8px;
+  background: #9cc069;
+  justify-content: space-between;
+  padding-left: 130px;
+  padding-right: 130px;
+  color: #fff;
+  padding-bottom: 8px;
+  font-size: 16px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #e3e3e3;
+}
+.extra-navbar-container .left {
+  font-weight: bold;
+}
+.extra-navbar-container .right span {
+  letter-spacing: 3px;
+  margin-right: 30px;
+}
+.extra-navbar-container .right i {
+  margin-left: 10px;
+}

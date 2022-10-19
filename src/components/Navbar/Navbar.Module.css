@@ -1,0 +1,257 @@
+/* .navbar-container {
+  background: #9cc069;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.nav-left {
+  font-weight: bold;
+  padding: 20px;
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+  color: #fff;
+}
+.nav-left i {
+  margin-right: 20px;
+  font-size: 30px;
+}
+.nav-right {
+  display: flex;
+}
+.nav-right .category,
+.nav-right .contact,
+.nav-right .login,
+.nav-right .register {
+  margin-left: 30px;
+  padding: 25px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-right .category:hover,
+.nav-right .contact:hover,
+.nav-right .login:hover,
+.nav-right .register:hover {
+  background-color: rgb(168, 165, 165);
+  transition: 0.3s ease-in-out;
+  color: #000;
+} */
+* {
+  margin: 0;
+  padding: 0;
+}
+.pages {
+  color: #316685;
+  text-align: center;
+  font-size: calc(1.5rem + 2vw);
+  margin-top: 10%;
+}
+.nav-logo:hover {
+  color: black;
+}
+.navbar {
+  background-color: #497d59;
+
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: fixed;
+  width: 100%;
+  margin-top: 35px;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px;
+  height: 80px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .nav-container {
+    width: 50%;
+  }
+}
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-logo {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 30px;
+  flex-grow: 1;
+}
+.nav-logo i {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+
+  padding: 0.5rem 1rem;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+}
+.nav-links:hover {
+  color: #fff;
+}
+.fa-code {
+  margin-left: 1rem;
+}
+
+.nav-item {
+  line-height: 40px;
+  margin-right: 1rem;
+  font-weight: 550;
+}
+.nav-item:hover {
+  color: #fff;
+}
+
+.nav-item:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.nav-item:hover:after {
+  width: 100%;
+  background: #fff;
+}
+
+.nav-item.active {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.active {
+  text-decoration: none;
+  line-height: 40px;
+  font-weight: 750;
+}
+.active:hover {
+  color: #fff;
+}
+.nav-icon {
+  display: none;
+}
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+.haber-etiketleri h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1c1d;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  display: inline-block;
+  position: relative;
+}
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid #fff;
+    position: absolute;
+    top: 80px;
+    left: -110%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background-color: #497d59;
+  }
+
+  .nav-links:hover {
+    color: white;
+  }
+  .nav-menu.active {
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-item:first-child {
+    border-top: 1px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .nav-item .active {
+    color: black;
+    border: none;
+  }
+  .nav-links {
+    padding: 1.5rem;
+    width: 100%;
+    display: table;
+    color: black;
+  }
+
+  .nav-icon {
+    display: block;
+    position: absolute;
+    top: -6px;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+  }
+  .nav-item:hover {
+    color: black;
+  }
+
+  .nav-item:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width 0.7s ease, background-color 0.5s ease;
+  }
+
+  .nav-item:hover:after {
+    width: 100%;
+    background: #000;
+  }
+}
+@media screen and (max-width: 470px) {
+  .navbar {
+    position: sticky;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,22 @@
+.carousel {
+  margin-top: 100px;
+}
+.carousel-item img {
+  height: 870px;
+  object-fit: cover;
+}
+.home-detail {
+  padding: 30px;
+  width: 700px;
+  padding-left: 60px;
+  padding-top: 200px;
+}
+.home-detail .home-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.home-detail .home-description {
+  font-size: 20px;
+  opacity: 0.8;
+}
