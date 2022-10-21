@@ -88,6 +88,28 @@ const Navbar = () => {
                 İletişim
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-links"
+                }
+                onClick={click ? handleClick : null}
+              >
+                Giriş
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-links"
+                }
+                onClick={click ? handleClick : null}
+              >
+                Kayıt Ol
+              </NavLink>
+            </li>
           </ul>
           {/* {language === "EN" && (
             <ul className={click ? "nav-menu active" : "nav-menu"}>
