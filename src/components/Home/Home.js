@@ -10,7 +10,10 @@ import diet9 from "../../assets/diet9.jpg";
 import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
+import Footer from "../Footer/Footer";
 const Home = () => {
+  document.body.style.backgroundImage = `none`;
+
   return (
     <>
       <ExtraNavbar />
@@ -90,6 +93,7 @@ const Home = () => {
           </button>
         </div>
         <Main />
+        <Footer />
       </div>
     </>
   );
