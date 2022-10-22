@@ -40,16 +40,21 @@ const Food = () => {
             {data.map((item) => (
               <>
                 <div className="item">
-                  <div className="item-title">{item.food.label}</div>
-                  <div className="item-image">
-                    <img src={item.food.image} alt="food" />
+                  <div className="a">
+                    <div className="item-image">
+                      <img src={item.food.image} alt="food" />
+                    </div>
                   </div>
-                  <div className="item-detail">
-                    <p>Karbonhidrat : {item.food.nutrients.CHOCDF}</p>
-                    <p>Enerji : {item.food.nutrients.ENERC_KCAL}</p>
-                    <p>Yağ : {item.food.nutrients.FAT}</p>
-                    <p>Lif : {item.food.nutrients.FIBTG}</p>
-                    <p>Protein : {item.food.nutrients.PROCNT}</p>
+                  <div className="b">
+                    <div className="item-title">{item.food.label}</div>
+
+                    <div className="item-detail">
+                      <p>Karbonhidrat : {item.food.nutrients.CHOCDF}</p>
+                      <p>Enerji : {item.food.nutrients.ENERC_KCAL}</p>
+                      <p>Yağ : {item.food.nutrients.FAT}</p>
+                      <p>Lif : {item.food.nutrients.FIBTG}</p>
+                      <p>Protein : {item.food.nutrients.PROCNT}</p>
+                    </div>
                   </div>
                 </div>
               </>

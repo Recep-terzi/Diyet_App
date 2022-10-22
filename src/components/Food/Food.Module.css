@@ -10,5 +10,15 @@
   margin-top: 30px;
 }
 .item {
-  margin-bottom: -400px;
+  margin-bottom: -355px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.item .a {
+  margin-right: 30px;
+}
+.item .b .item-title {
+  font-size: 30px;
+  margin-bottom: 30px;
 }
