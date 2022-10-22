@@ -1,10 +1,14 @@
 .food-container {
   margin-top: 150px;
   text-align: center;
+  padding-bottom: 304px;
   font-size: 20px;
   font-weight: bold;
 }
 .food-input input {
   width: 30%;
   margin-top: 30px;
+}
+.item {
+  margin-bottom: -400px;
 }
