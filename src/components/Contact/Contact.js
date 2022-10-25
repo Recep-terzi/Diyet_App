@@ -1,6 +1,7 @@
 import React from "react";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import contact from "../../assets/contact.png";
 import "./Contact.Module.css";
 const Contact = () => {
@@ -9,7 +10,7 @@ const Contact = () => {
       <ExtraNavbar />
       <Navbar />
       <div className="contact-container">
-        <div className="row">
+        <div className="row contact-row">
           <div className="col-md-6">
             <img src={contact} alt="" />
           </div>
@@ -41,6 +42,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

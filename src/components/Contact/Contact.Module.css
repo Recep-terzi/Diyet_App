@@ -1,5 +1,4 @@
 .contact-container {
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -9,6 +8,9 @@
   height: 500px;
   align-items: center;
   justify-content: center;
+}
+.contact-row {
+  margin-top: 200px;
 }
 .contact-title {
   text-align: center;
