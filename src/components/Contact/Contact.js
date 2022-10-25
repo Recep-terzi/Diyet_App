@@ -11,7 +11,7 @@ const Contact = () => {
       <Navbar />
       <div className="contact-container">
         <div className="row contact-row">
-          <div className="col-md-6">
+          <div className="col-md-6 contact-image">
             <img src={contact} alt="" />
           </div>
           <div className="col-md-6">

@@ -18,10 +18,7 @@
   margin-bottom: 20px;
   font-weight: bold;
 }
-.contact-form .contact-image img {
-  width: 100%;
-  height: 100%;
-}
+
 .contact-form .username-form input,
 .email-form input,
 .message-form textarea {
