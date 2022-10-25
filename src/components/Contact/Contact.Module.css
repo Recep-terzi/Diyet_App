@@ -1,0 +1,44 @@
+.contact-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 1000px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.contact-title {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.contact-form .contact-image img {
+  width: 100%;
+  height: 100%;
+}
+.contact-form .username-form input,
+.email-form input,
+.message-form textarea {
+  width: 100%;
+  border: none;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.contact-form .contact-button button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #497d59;
+  height: 40px;
+}
+.contact-form .contact-button button:hover {
+  background-color: #9cc069;
+  transition: 0.3s ease-in;
+  color: #fff;
+}
