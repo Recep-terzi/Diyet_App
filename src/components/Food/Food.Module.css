@@ -4,6 +4,7 @@
   padding-bottom: 304px;
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 200px;
 }
 .food-input input {
   width: 30%;
@@ -14,10 +15,26 @@
   font-weight: bold;
 }
 .item {
-  margin-bottom: -355px;
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  width: 600px;
+  align-items: center;
+  background-color: #497d59;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 400px;
+  color: #fff;
+  -webkit-box-shadow: -4px 7px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -4px 7px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 7px 16px 0px rgba(0, 0, 0, 0.75);
+}
+.item-image img {
+  border-radius: 10px;
 }
 .item .a {
   margin-right: 30px;
