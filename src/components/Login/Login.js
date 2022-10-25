@@ -8,6 +8,9 @@ const Login = () => {
   document.body.style.backgroundSize = "cover";
   return (
     <>
+      <div className="back-container">
+        <Link to="/"> Anasayfa'ya dön</Link>
+      </div>
       <div className="login-container">
         <div className="row">
           <div className="col-md-6 login-left">

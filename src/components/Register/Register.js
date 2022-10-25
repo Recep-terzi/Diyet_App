@@ -9,6 +9,9 @@ const Register = () => {
 
   return (
     <>
+      <div className="back-container-register">
+        <Link to="/"> Anasayfa'ya dön</Link>
+      </div>
       <div className="register-container animate__bounceIn animate__animated">
         <div className="register-title">Kullanıcı Kayıdı</div>
         <div className="register-form">

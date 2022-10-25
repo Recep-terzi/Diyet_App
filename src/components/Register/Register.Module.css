@@ -59,3 +59,13 @@
   color: #9cc069;
   transition: 0.2s ease;
 }
+.back-container-register a {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #355c41;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 30px;
+  position: absolute;
+  color: #fff;
+}
