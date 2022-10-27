@@ -1,7 +1,5 @@
 import React from "react";
 import "./Home.Module.css";
-import diet from "../../assets/diet.jpg";
-import diet2 from "../../assets/diet2.jpg";
 import diet6 from "../../assets/diet6.jpg";
 import diet5 from "../../assets/diet5.jpg";
 import diet7 from "../../assets/diet7.jpg";
