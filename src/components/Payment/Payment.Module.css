@@ -1,0 +1,98 @@
+.payment-container {
+  margin: auto;
+  margin-top: 250px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 1300px;
+  height: 300px;
+}
+.card-number-text {
+  position: absolute;
+  margin-top: 180px;
+  font-size: 30px;
+  color: #fff;
+  margin-left: 50px;
+  font-weight: bold;
+}
+.card-holdername {
+  position: absolute;
+  margin-top: 270px;
+  font-size: 20px;
+  color: #fff;
+  margin-left: 50px;
+  font-weight: bold;
+}
+.payment-image img {
+  width: 70%;
+}
+.payment-title {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.payment-form {
+  background: #e3e3e3;
+  padding: 40px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.payment-card-number input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+
+  padding: 5px;
+  padding-left: 10px;
+}
+.payment-card-holdername input {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 5px;
+  padding-left: 10px;
+}
+.payment-card-detail {
+  display: flex;
+  justify-content: space-evenly;
+}
+.payment-card-detail input {
+  width: 60%;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 5px;
+  padding-left: 10px;
+}
+.payment-card-detail input:last-child {
+  margin-right: 0;
+}
+.payment-submit {
+  display: flex;
+  justify-content: space-between;
+}
+.payment-submit button:first-child {
+  width: 60%;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #497d59;
+  color: #fff;
+}
+.payment-submit button:last-child {
+  width: 30%;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #497d59;
+  color: #fff;
+}
