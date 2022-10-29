@@ -7,6 +7,9 @@ import bank from "../../assets/bank.png";
 const Payment = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardHolderName, setCardHolderName] = useState("");
+  const [cardFirstDate, setCardFirstDate] = useState("");
+  const [cardLastDate, setCardLastDate] = useState("");
+  const [cardCvv, setCardCvv] = useState("");
   return (
     <>
       <ExtraNavbar />
@@ -27,8 +30,14 @@ const Payment = () => {
                 <>XXXX XXXX XXXX XXXX</>
               )}
             </span>
-            <span className="card-first-date"></span>
-            <span className="card-last-date"></span>
+            <div className="card-date">
+              <span className="card-first-date">
+                {cardFirstDate ? <>{`${cardFirstDate} /`}</> : <></>}
+              </span>
+              <span className="card-last-date">
+                {cardLastDate ? <>{` ${cardLastDate} `}</> : <></>}
+              </span>
+            </div>
             <span className="card-holdername">
               {cardHolderName ? (
                 <>{cardHolderName}</>
@@ -60,9 +69,24 @@ const Payment = () => {
                 />
               </div>
               <div className="payment-card-detail">
-                <input type="text" placeholder="12" />
-                <input type="text" placeholder="2028" />
-                <input type="text" placeholder="CVV" />
+                <input
+                  type="text"
+                  placeholder="12"
+                  value={cardFirstDate}
+                  onChange={(e) => setCardFirstDate(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="2028"
+                  value={cardLastDate}
+                  onChange={(e) => setCardLastDate(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="CVV"
+                  value={cardCvv}
+                  onChange={(e) => setCardCvv(e.target.value)}
+                />
               </div>
               <div className="payment-submit">
                 <button className="confirm-button">Confirm</button>

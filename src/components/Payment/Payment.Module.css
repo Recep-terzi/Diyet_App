@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   width: 1300px;
-  height: 300px;
+  height: 500px;
 }
 .card-number-text {
   position: absolute;
@@ -22,6 +22,14 @@
   font-size: 20px;
   color: #fff;
   margin-left: 50px;
+  font-weight: bold;
+}
+.card-date {
+  position: absolute;
+  margin-top: 230px;
+  font-size: 20px;
+  color: #fff;
+  margin-left: 250px;
   font-weight: bold;
 }
 .payment-image img {
@@ -46,7 +54,6 @@
   border: none;
   border: 1px solid #000;
   margin-bottom: 20px;
-
   padding: 5px;
   padding-left: 10px;
 }
@@ -95,4 +102,8 @@
   border-radius: 10px;
   background-color: #497d59;
   color: #fff;
+}
+.payment-submit button:hover {
+  background-color: #9cc069;
+  transition: 0.3s ease-in-out;
 }
