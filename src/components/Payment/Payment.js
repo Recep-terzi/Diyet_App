@@ -73,12 +73,14 @@ const Payment = () => {
                   type="text"
                   placeholder="12"
                   value={cardFirstDate}
+                  maxLength="2"
                   onChange={(e) => setCardFirstDate(e.target.value)}
                 />
                 <input
                   type="text"
                   placeholder="2028"
                   value={cardLastDate}
+                  maxLength="4"
                   onChange={(e) => setCardLastDate(e.target.value)}
                 />
                 <input
