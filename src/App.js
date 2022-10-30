@@ -4,6 +4,7 @@ import Food from "./components/Food/Food";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Payment from "./components/Payment/Payment";
+import PersonelPage from "./components/PersonelPage/PersonelPage";
 import Register from "./components/Register/Register";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/food" element={<Food />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/personel" element={<PersonelPage />}></Route>
       </Routes>
     </>
   );
