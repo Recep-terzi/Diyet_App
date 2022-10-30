@@ -83,6 +83,9 @@ const PersonelPage = () => {
                   <input type="checkbox" />
                 </div>
               </div>
+              <div className="personel-button">
+                <button>Düzenle</button>
+              </div>
             </div>
           </div>
         </div>
