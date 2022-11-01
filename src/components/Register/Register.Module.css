@@ -12,15 +12,96 @@
   margin-left: 100px;
 }
 
-.register-form .register-username input,
-.register-form .register-password input,
-.register-form .register-password-re input,
-.register-form .register-email input {
+.register-username-email .register-username span,
+.register-username-email .register-email span,
+.register-password-repassword .register-password span,
+.register-password-repassword .register-repassword span {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.register-username-email .register-username input,
+.register-username-email .register-email input,
+.register-password-repassword .register-password input,
+.register-password-repassword .register-repassword input {
   width: 100%;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #000;
   padding: 5px;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+.register-tc span {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.register-age-kilo-boy,
+.register-food-targetkilo-interest,
+.register-kronik-alerji-evli-ozel {
+  display: flex;
+}
+.register-kronik-alerji-evli-ozel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.register-age,
+.register-kilo,
+.register-boy,
+.register-food,
+.register-targetkilo,
+.register-interest,
+.register-kronik,
+.register-alerji,
+.register-evli,
+.register-ozel {
+  margin-right: 5px;
+}
+.register-tc span,
+.register-age span,
+.register-kilo span,
+.register-boy span,
+.register-food span,
+.register-targetkilo span,
+.register-interest span,
+.register-kronik span,
+.register-alerji span,
+.register-evli span,
+.register-ozel span {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.register-tc input,
+.register-age input,
+.register-kilo input,
+.register-boy input,
+.register-food input,
+.register-targetkilo input,
+.register-interest input,
+.register-kronik input,
+.register-alerji input,
+.register-evli input,
+.register-ozel input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+.register-age input,
+.register-kilo input,
+.register-boy input,
+.register-food input,
+.register-targetkilo input,
+.register-interest input {
+  width: 170px;
 }
 .register-left img {
   width: 100%;
@@ -60,8 +141,7 @@
   color: #9cc069;
   transition: 0.2s ease;
 }
-.back-container-register {
-}
+
 .back-container-register a {
   font-size: 20px;
   text-decoration: none;
@@ -71,4 +151,11 @@
   border-radius: 30px;
   position: absolute;
   color: #fff;
+}
+.button-grp {
+  display: flex;
+  margin-top: 30px;
+}
+.button-grp button {
+  margin-right: 10px;
 }
