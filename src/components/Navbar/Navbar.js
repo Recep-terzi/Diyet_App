@@ -30,6 +30,8 @@ import { logout } from "../../redux/dietSlice";
 import { signOut } from "firebase/auth";
 import { useSelector, useDispatch } from "react-redux";
 import { auth } from "../../firebase/config";
+import "alertifyjs/build/css/alertify.css";
+import alertify from "alertifyjs";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -45,6 +47,7 @@ const Navbar = () => {
         console.log("başarıyla çıkış yapıldı");
         dispatch(logout());
         navigate("/");
+        alertify.success("Başarıyla çıkış yapıldı!");
       })
       .catch((error) => {
         console.log(error.message);
