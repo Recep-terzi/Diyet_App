@@ -279,7 +279,7 @@ const Register = () => {
           </button>
           <div className="register-info">
             Hesabınız var mı?
-            <Link to="/register"> hemen giriş için tıklayın.</Link>{" "}
+            <Link to="/login"> hemen giriş için tıklayın.</Link>{" "}
           </div>
         </form>
       </div>

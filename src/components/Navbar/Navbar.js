@@ -109,6 +109,17 @@ const Navbar = () => {
             </li>
             {user && (
               <>
+                <li className="nav-item">
+                  <NavLink
+                    to="/personel"
+                    className={({ isActive }) =>
+                      isActive ? activeClassName : "nav-links"
+                    }
+                    onClick={click ? handleClick : null}
+                  >
+                    Profil
+                  </NavLink>
+                </li>
                 <li className="nav-item" onClick={handleLogout}>
                   <NavLink
                     to="/"
