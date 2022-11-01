@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Register.Module.css";
 import registerDiet from "../../assets/register-diet.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import StepFlowWizard from "react-step-flow-wizard";
 import "animate.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getName } from "../../redux/dietSlice";
+import { login } from "../../redux/dietSlice";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../../firebase/config";
 // const StartView = (props) => {
 //   const { onPreviousClick, onNextClick } = props;
 //   const [name, setName] = useState();
@@ -172,21 +174,36 @@ const Register = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [rePassword, setRePassword] = useState();
-  const dispatch = useDispatch();
+  const [esit, setEsit] = useState(false);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.diet.username);
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      getName({
-        username: name,
-        email: email,
-        password: password,
-        rePassword: rePassword,
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        updateProfile(res.user, {
+          displayName: name,
+        });
+        console.log(res);
+        navigate("/");
       })
-    );
-  };
-  const user = useSelector((state) => state.diet.username);
-  console.log(user);
+      .catch((err) => setError(err.message, error));
 
+    setEmail("");
+    setName("");
+    setPassword("");
+    setRePassword("");
+    console.log(user);
+  };
+
+  useEffect(() => {
+    if (password === rePassword) {
+      setEsit(true);
+    } else {
+      setEsit(false);
+    }
+  }, [password, rePassword]);
   // const screens = [
   //   {
   //     identifier: "step1",
@@ -238,7 +255,7 @@ const Register = () => {
             <div className="register-password">
               <span>Parola</span>
               <input
-                type="text"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />{" "}
@@ -246,11 +263,16 @@ const Register = () => {
             <div className="register-repassword">
               <span>Parolayı tekrar giriniz</span>
               <input
-                type="text"
+                type="password"
                 value={rePassword}
                 onChange={(e) => setRePassword(e.target.value)}
               />
             </div>{" "}
+            {esit ? (
+              <></>
+            ) : (
+              <div className="esit-parola">Parolalar uyuşmuyor!</div>
+            )}
           </div>
           <button className="register-button" type="submit">
             Giriş Yap

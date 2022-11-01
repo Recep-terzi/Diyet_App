@@ -3,14 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const dietSlice = createSlice({
   name: "diet",
   initialState: {
-    username: [],
+    user: null,
+    login: [],
   },
   reducers: {
-    getName: (state, action) => {
-      state.username = action.payload;
+    login: (state, action) => {
+      state.user = action.payload;
+    },
+    logout: (state) => {
+      state.user = null;
     },
   },
 });
 
-export const { getName } = dietSlice.actions;
+export const { logout, login } = dietSlice.actions;
 export default dietSlice.reducer;

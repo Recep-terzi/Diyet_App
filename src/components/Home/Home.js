@@ -9,9 +9,11 @@ import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Footer from "../Footer/Footer";
+import { useSelector } from "react-redux";
 const Home = () => {
   document.body.style.backgroundImage = `none`;
-
+  const user = useSelector((state) => state.diet.user);
+  console.log(user);
   return (
     <>
       <ExtraNavbar />

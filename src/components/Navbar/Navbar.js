@@ -23,14 +23,33 @@
 
 // export default Navbar;
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.Module.css";
 import { Typography } from "@mui/material";
+import { logout } from "../../redux/dietSlice";
+import { signOut } from "firebase/auth";
+import { useSelector, useDispatch } from "react-redux";
+import { auth } from "../../firebase/config";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const Close = () => setClick(false);
   let activeClassName = "active";
+  const user = useSelector((state) => state.diet.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("başarıyla çıkış yapıldı");
+        dispatch(logout());
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <>
       <div className={click ? "main-container" : ""} onClick={() => Close()} />
@@ -88,28 +107,47 @@ const Navbar = () => {
                 İletişim
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  isActive ? activeClassName : "nav-links"
-                }
-                onClick={click ? handleClick : null}
-              >
-                Giriş
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/register"
-                className={({ isActive }) =>
-                  isActive ? activeClassName : "nav-links"
-                }
-                onClick={click ? handleClick : null}
-              >
-                Kayıt Ol
-              </NavLink>
-            </li>
+            {user && (
+              <>
+                <li className="nav-item" onClick={handleLogout}>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      isActive ? activeClassName : "nav-links"
+                    }
+                    onClick={click ? handleClick : null}
+                  >
+                    Çıkış
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {!user && (
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      isActive ? activeClassName : "nav-links"
+                    }
+                    onClick={click ? handleClick : null}
+                  >
+                    Giriş
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    to="/register"
+                    className={({ isActive }) =>
+                      isActive ? activeClassName : "nav-links"
+                    }
+                    onClick={click ? handleClick : null}
+                  >
+                    Kayıt Ol
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
           {/* {language === "EN" && (
             <ul className={click ? "nav-menu active" : "nav-menu"}>
