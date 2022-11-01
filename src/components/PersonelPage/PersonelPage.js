@@ -68,7 +68,7 @@ const PersonelPage = () => {
 
                 <div className="personel-kronik">
                   <span>Kronik Hastalık</span>
-                  <input type="checkbox" />
+                  <input type="checkbox" checked />
                 </div>
                 <div className="personel-alerji">
                   <span>Alerji</span>
@@ -76,7 +76,7 @@ const PersonelPage = () => {
                 </div>
                 <div className="personel-evli">
                   <span>Evli</span>
-                  <input type="checkbox" />
+                  <input type="checkbox" checked />
                 </div>
                 <div className="personel-ozel">
                   <span>Özel Durum</span>
