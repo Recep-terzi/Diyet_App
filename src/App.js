@@ -12,6 +12,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
 import { login, logout } from "./redux/dietSlice";
 import Loading from "./components/Loading/Loading";
+import Login2 from "./components/Login2/Login2";
 function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ function App() {
           <Route path="/food" element={<Food />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/payment" element={<Payment />}></Route>
+          <Route path="/login2" element={<Login2 />}></Route>
           <Route path="/personel" element={<PersonelPage />}></Route>
         </Routes>
       )}
