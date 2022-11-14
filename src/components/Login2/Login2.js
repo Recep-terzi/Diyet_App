@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Login2.Module.css";
 import bg from "../../assets/bg.jpg";
-
+import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const Login2 = () => {
   const [loading, setLoading] = useState(false);
   const handleSubmit = (e) => {
@@ -33,7 +34,18 @@ const Login2 = () => {
           <div className="form-button">
             <button type="submit">Giriş Yap</button>
           </div>
+          <div className="info">
+            Do you have not account? <Link to="/register">Kayıt ol</Link>
+          </div>
+          <div className="social">
+            <AiFillInstagram />
+            <AiFillLinkedin />
+            <AiFillGithub />
+          </div>
         </form>
+      </div>
+      <div className="back-div">
+        <button>Anasayfa</button>
       </div>
     </>
   );

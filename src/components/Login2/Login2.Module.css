@@ -48,3 +48,35 @@
   transition: 0.3s ease-in;
   color: #000;
 }
+.info {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.info a {
+  color: #497d59;
+}
+.social {
+  text-align: center;
+  margin-top: 60px;
+}
+.social svg {
+  font-size: 40px;
+  margin-right: 10px;
+}
+.back-div {
+  position: absolute;
+  margin: 10px;
+}
+.back-div button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #497d59;
+  color: #fff;
+}
+.back-div button:hover {
+  background-color: #5ba070;
+  color: #000;
+  transition: 0.3s ease-in-out;
+}
