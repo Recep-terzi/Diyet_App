@@ -23,11 +23,11 @@ const Login2 = () => {
 
           <div className="login-form">
             <div className="email">
-              <label>Email Adresiniz</label>
+              <label>Email Adresi</label>
               <input type="text" />
             </div>
             <div className="password">
-              <label> Parolanız </label>
+              <label> Parola </label>
               <input type="text" />
             </div>
           </div>
