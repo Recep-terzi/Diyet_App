@@ -75,6 +75,10 @@
   background-color: #497d59;
   color: #fff;
 }
+.back-div button a {
+  text-decoration: none;
+  color: #fff;
+}
 .back-div button:hover {
   background-color: #5ba070;
   color: #000;

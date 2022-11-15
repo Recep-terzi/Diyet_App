@@ -1,0 +1,67 @@
+.register-container {
+  background-color: #fff;
+  width: 800px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 15% 30%;
+  border-bottom-left-radius: 15% 30%;
+  border-left: 10px solid #497d59;
+}
+.register-title {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.re-password label,
+.name label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.re-password input,
+.name input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.back-div-register {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+.back-div-register button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #497d59;
+  color: #fff;
+}
+.back-div-register button a {
+  text-decoration: none;
+  color: #fff;
+}
+.back-div-register button:hover {
+  background-color: #5ba070;
+  color: #000;
+  transition: 0.3s ease-in-out;
+}
+.esit-info {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: red;
+}
+.disabled-button {
+  opacity: 0.5;
+}
