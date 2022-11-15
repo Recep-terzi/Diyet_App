@@ -123,9 +123,15 @@ const Register2 = () => {
                 Hesabınız var mı? <Link to="/login2">Giriş yap</Link>
               </div>
               <div className="social">
-                <AiFillInstagram />
-                <AiFillLinkedin />
-                <AiFillGithub />
+                <a href="https://instgram.com/recepterziiii">
+                  <AiFillInstagram />
+                </a>
+                <a href="https://linkedin.com/in/recepterzi">
+                  <AiFillLinkedin />
+                </a>
+                <a href="https://github.com/recep-terzi">
+                  <AiFillGithub />
+                </a>
               </div>
             </form>
           </div>

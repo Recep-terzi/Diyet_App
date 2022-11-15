@@ -57,6 +57,7 @@ const Login2 = () => {
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="password">
@@ -65,6 +66,7 @@ const Login2 = () => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -75,9 +77,15 @@ const Login2 = () => {
                 Do you have not account? <Link to="/register2">Kayıt ol</Link>
               </div>
               <div className="social">
-                <AiFillInstagram />
-                <AiFillLinkedin />
-                <AiFillGithub />
+                <a href="https://instgram.com/recepterziiii">
+                  <AiFillInstagram />
+                </a>
+                <a href="https://linkedin.com/in/recepterzi">
+                  <AiFillLinkedin />
+                </a>
+                <a href="https://github.com/recep-terzi">
+                  <AiFillGithub />
+                </a>
               </div>
             </form>
           </div>

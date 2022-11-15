@@ -60,6 +60,13 @@
   text-align: center;
   margin-top: 60px;
 }
+.social a {
+  color: #000;
+}
+.social a:hover {
+  color: #5ba070;
+  transition: 0.3s ease-out;
+}
 .social svg {
   font-size: 40px;
   margin-right: 10px;
