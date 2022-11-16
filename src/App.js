@@ -13,6 +13,7 @@ import Loading from "./components/Loading/Loading";
 import Login2 from "./components/Login2/Login2";
 import Register2 from "./components/Register2/Register2";
 import NotFound from "./components/404/NotFound";
+import DetailPerson from "./components/DetailPerson/DetailPerson";
 function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
           <Route path="/payment" element={<Payment />}></Route>
           <Route path="/login2" element={<Login2 />}></Route>
           <Route path="*" element={<NotFound />}></Route>
+          <Route path="/detailperson" element={<DetailPerson />}></Route>
           <Route path="/register2" element={<Register2 />}></Route>
           <Route path="/personel" element={<PersonelPage />}></Route>
         </Routes>

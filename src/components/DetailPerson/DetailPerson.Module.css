@@ -1,0 +1,102 @@
+.detailperson-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #fff;
+  width: 470px;
+  height: 650px;
+  border-radius: 20px;
+  padding: 40px;
+}
+.detailperson-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.tc-number label,
+.age label,
+.boy label,
+.kilo label,
+.yemek label,
+.hedefKilo label,
+.ilgi label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.age-boy-kilo {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.age,
+.boy {
+  margin-right: 5px;
+}
+.tc-number input,
+.age input,
+.boy input,
+.kilo input,
+.yemek input,
+.hedefKilo input,
+.ilgi input {
+  width: 100%;
+  border: none;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.saglik-detay {
+  display: flex;
+  justify-content: space-between;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 20px;
+}
+.kronik input,
+.alerji input,
+.evli input,
+.ozel-durum input {
+  width: 100%;
+}
+.kronik span,
+.alerji span,
+.evli span,
+.ozel-durum span {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.detailperson-button {
+  display: flex;
+  margin-top: 20px;
+}
+.detailperson-button button {
+  border: none;
+  background-color: #497d59;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+}
+.detailperson-button button:first-child {
+  width: 70%;
+  margin-right: 5px;
+}
+.detailperson-button button:first-child:hover {
+  background-color: #5ba070;
+  transition: 0.3s ease-in;
+}
+.detailperson-button button:last-child {
+  width: 30%;
+}
+.detailperson-button button:last-child:hover {
+  background-color: red;
+  transition: 0.3s ease-in;
+}
