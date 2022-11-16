@@ -178,9 +178,9 @@ const Register2 = () => {
             </form>
           </div>
           <div className="back-div-register">
-            <button>
-              <Link to="/">Anasayfa</Link>
-            </button>
+            <Link to="/">
+              <button>Anasayfa</button>
+            </Link>
           </div>
         </>
       )}

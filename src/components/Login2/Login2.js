@@ -114,9 +114,9 @@ const Login2 = () => {
             </form>
           </div>
           <div className="back-div">
-            <button>
-              <Link to="/">Kayıt ol</Link>
-            </button>
+            <Link to="/">
+              <button>Anasayfa</button>
+            </Link>
           </div>
         </>
       )}
