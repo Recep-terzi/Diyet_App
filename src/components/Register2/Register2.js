@@ -4,7 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import "animate.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/dietSlice";
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import {
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiFillGithub,
+  AiFillEye,
+  AiFillEyeInvisible,
+} from "react-icons/ai";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import Loading from "../Loading/Loading";
@@ -13,6 +19,8 @@ const Register2 = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [loading, setLoading] = useState(true);
+  const [hidden, setHidden] = useState(true);
+  const [hidden2, setHidden2] = useState(true);
   const [password, setPassword] = useState();
   const [rePassword, setRePassword] = useState();
   const [esit, setEsit] = useState(false);
@@ -81,20 +89,54 @@ const Register2 = () => {
                 <div className="password">
                   <label> Parola </label>
                   <input
-                    type="password"
+                    type={hidden ? "password" : "text"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+                  {hidden ? (
+                    <>
+                      <AiFillEye
+                        onClick={() => {
+                          setHidden(!hidden);
+                        }}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <AiFillEyeInvisible
+                        onClick={() => {
+                          setHidden(!hidden);
+                        }}
+                      />
+                    </>
+                  )}
                 </div>
                 <div className="re-password">
                   <label> Parola Tekrar </label>
                   <input
-                    type="password"
+                    type={hidden2 ? "password" : "text"}
                     value={rePassword}
                     onChange={(e) => setRePassword(e.target.value)}
                     required
                   />
+                  {hidden2 ? (
+                    <>
+                      <AiFillEye
+                        onClick={() => {
+                          setHidden2(!hidden2);
+                        }}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <AiFillEyeInvisible
+                        onClick={() => {
+                          setHidden2(!hidden2);
+                        }}
+                      />
+                    </>
+                  )}
                 </div>
                 {esit ? (
                   <></>

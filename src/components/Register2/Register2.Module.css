@@ -65,3 +65,11 @@
 .disabled-button {
   opacity: 0.5;
 }
+.re-password svg {
+  position: absolute;
+  font-size: 35px;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: -40px;
+  cursor: pointer;
+}

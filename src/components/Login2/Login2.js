@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Login2.Module.css";
 import bg from "../../assets/bg.jpg";
-import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import {
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiFillGithub,
+  AiFillEye,
+  AiFillEyeInvisible,
+} from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -12,6 +18,7 @@ const Login2 = () => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [hidden, setHidden] = useState(true);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -63,11 +70,28 @@ const Login2 = () => {
                 <div className="password">
                   <label> Parola </label>
                   <input
-                    type="password"
+                    type={hidden ? "password" : "text"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+                  {hidden ? (
+                    <>
+                      <AiFillEye
+                        onClick={() => {
+                          setHidden(!hidden);
+                        }}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <AiFillEyeInvisible
+                        onClick={() => {
+                          setHidden(!hidden);
+                        }}
+                      />
+                    </>
+                  )}
                 </div>
               </div>
               <div className="form-button">

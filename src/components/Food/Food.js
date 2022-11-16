@@ -1,13 +1,15 @@
-import axios from "axios"
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Footer from "../Footer/Footer";
+import Loading from "../Loading/Loading";
 import Navbar from "../Navbar/Navbar";
 import "./Food.Module.css";
 
 const Food = () => {
   const [food, setFood] = useState();
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -16,54 +18,68 @@ const Food = () => {
       )
       .then((res) => setData(res.data.parsed));
   };
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   console.log(data);
   return (
     <>
-      <ExtraNavbar />
-      <Navbar />
-      <div className="food-container">
-        <div className="food-title">
-          Ürünler, sebzeler, yemekler ve daha fazlası hakkında kalori,protein
-          değerlerini öğrenmek için aşağıya ismini girmeniz yeterlidir.
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="food-input">
-            <input
-              type="text"
-              value={food}
-              onChange={(e) => setFood(e.target.value)}
-            />
-          </div>
-        </form>
-        {data && (
-          <>
-            {data.map((item) => (
+      {loading ? (
+        <>
+          <Loading />
+        </>
+      ) : (
+        <>
+          <ExtraNavbar />
+          <Navbar />
+          <div className="food-container">
+            <div className="food-title">
+              Ürünler, sebzeler, yemekler ve daha fazlası hakkında
+              kalori,protein değerlerini öğrenmek için aşağıya ismini girmeniz
+              yeterlidir.
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="food-input">
+                <input
+                  type="text"
+                  value={food}
+                  onChange={(e) => setFood(e.target.value)}
+                />
+              </div>
+            </form>
+            {data && (
               <>
-                <div className="item">
-                  <div className="a">
-                    <div className="item-image">
-                      <img src={item.food.image} alt="food" />
-                    </div>
-                  </div>
-                  <div className="b">
-                    <div className="item-title">{item.food.label}</div>
+                {data.map((item) => (
+                  <>
+                    <div className="item">
+                      <div className="a">
+                        <div className="item-image">
+                          <img src={item.food.image} alt="food" />
+                        </div>
+                      </div>
+                      <div className="b">
+                        <div className="item-title">{item.food.label}</div>
 
-                    <div className="item-detail">
-                      <p>Karbonhidrat : {item.food.nutrients.CHOCDF}</p>
-                      <p>Enerji : {item.food.nutrients.ENERC_KCAL}</p>
-                      <p>Yağ : {item.food.nutrients.FAT}</p>
-                      <p>Lif : {item.food.nutrients.FIBTG}</p>
-                      <p>Protein : {item.food.nutrients.PROCNT}</p>
+                        <div className="item-detail">
+                          <p>Karbonhidrat : {item.food.nutrients.CHOCDF}</p>
+                          <p>Enerji : {item.food.nutrients.ENERC_KCAL}</p>
+                          <p>Yağ : {item.food.nutrients.FAT}</p>
+                          <p>Lif : {item.food.nutrients.FIBTG}</p>
+                          <p>Protein : {item.food.nutrients.PROCNT}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </>
+                ))}
               </>
-            ))}
-          </>
-        )}
-      </div>
+            )}
+          </div>
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   );
 };
