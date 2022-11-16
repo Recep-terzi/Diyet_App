@@ -35,7 +35,7 @@ const Register2 = () => {
           displayName: name,
         });
         console.log(res);
-        navigate("/");
+        navigate("/detailperson");
       })
       .catch((err) => setError(err.message, error));
 
@@ -151,12 +151,12 @@ const Register2 = () => {
               <div className="form-button">
                 {esit ? (
                   <>
-                    <button type="submit">Giriş Yap</button>
+                    <button type="submit">Kayıt ol</button>
                   </>
                 ) : (
                   <>
                     <button type="submit" disabled className="disabled-button">
-                      Giriş Yap
+                      Kayıt ol
                     </button>
                   </>
                 )}
