@@ -37,6 +37,11 @@
 .boy {
   margin-right: 5px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .tc-number input,
 .age input,
 .boy input,

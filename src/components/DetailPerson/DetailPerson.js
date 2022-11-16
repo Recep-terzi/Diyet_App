@@ -25,20 +25,20 @@ const DetailPerson = () => {
             <form>
               <div className="tc-number">
                 <label> Tc Kimlik Numara </label>
-                <input type="text" />
+                <input type="number" maxLength={11} />
               </div>
               <div className="age-boy-kilo">
                 <div className="age">
                   <label> Yaş </label>
-                  <input type="text" />
+                  <input type="number" maxLength={3} />
                 </div>
                 <div className="boy">
                   <label> Boy </label>
-                  <input type="text" />
+                  <input type="number" maxLength={3} />
                 </div>
                 <div className="kilo">
                   <label> Kilo </label>
-                  <input type="text" />
+                  <input type="number" maxLength={3} />
                 </div>
               </div>
               <div className="yemek-hedefKilo-ilgi">
