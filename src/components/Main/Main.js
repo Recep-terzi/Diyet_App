@@ -3,13 +3,19 @@ import "./Main.Module.css";
 import saglik from "../../assets/saglik.jpg";
 import saglik2 from "../../assets/saglik2.jpg";
 import saglik3 from "../../assets/saglik3.jpg";
+import { useSelector } from "react-redux";
 const Main = () => {
+  const detail = useSelector((state) => state.diet.personDetail);
+
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <div className="main-title">Lorem, ipsum dolor.</div>
+            <div className="main-title">
+              Lorem, ipsum dolor. {detail && <>Detayınız var</>}
+              {!detail && <>Detayınız yok</>}
+            </div>
             <div className="main-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
               aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo

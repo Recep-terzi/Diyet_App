@@ -5,41 +5,50 @@ import Navbar from "../Navbar/Navbar";
 import avatar from "../../assets/avatar.png";
 import "./PesonelPage.Module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { collection, getDocs } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { person } from "../../redux/dietSlice";
+
 const PersonelPage = () => {
   const detail = useSelector((state) => state.diet.personDetail);
+  const user = useSelector((state) => state.diet.user);
   const dispatch = useDispatch();
   useEffect(() => {
     const ref = collection(db, "personDetail");
-    getDocs(ref).then((snap) => {
-      let result = [];
-
-      snap.forEach((doc) => {
-        result.push({
-          ...doc.data(),
-          id: doc.id,
-        });
-      });
-
-      dispatch(person(result));
+    const q = query(ref, where("email", "==", user?.email));
+    const unsub = onSnapshot(q, (snap) => {
+      dispatch(
+        person(
+          snap.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+        )
+      );
     });
-    // return unsub;
-  }, [dispatch]);
+    return unsub;
+  }, [dispatch, user]);
   console.log(detail);
+  console.log(user);
   return (
     <>
       <ExtraNavbar />
       <Navbar />
-      {detail && (
-        <>
-          <div className="personelpage-container">
-            <div className="container">
-              <div className="row personel-row">
-                <div className="col-md-3 personel-row-3">
-                  <img src={avatar} alt="" />
-                </div>
+
+      <div className="personelpage-container">
+        <div className="container">
+          <div className="row personel-row">
+            <div className="col-md-3 personel-row-3">
+              <img src={avatar} alt="" />
+            </div>
+            {detail && (
+              <>
                 <div className="col-md-9 personel-row-9">
                   <div className="personel-title">Kişisel Sayfam</div>
                   <div className="personel-info">
@@ -124,11 +133,12 @@ const PersonelPage = () => {
                     <button>Düzenle</button>
                   </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
-        </>
-      )}
+        </div>
+      </div>
+
       <Footer />
     </>
   );
