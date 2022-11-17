@@ -125,9 +125,9 @@ const DetailPerson = () => {
                 <label> Tc Kimlik Numara </label>
                 <input
                   type="number"
-                  maxLength={11}
                   value={tc}
                   onChange={(e) => setTc(e.target.value)}
+                  maxLength={11}
                 />
               </div>
               <div className="age-boy-kilo">

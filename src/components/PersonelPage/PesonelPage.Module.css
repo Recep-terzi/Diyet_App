@@ -151,3 +151,13 @@
   background-color: #9cc069;
   transition: 0.3s ease-in-out;
 }
+.personalpage-err {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 302px;
+  margin-bottom: 301px;
+  font-weight: bold;
+}
+.personalpage-err p a {
+  color: #497d59;
+}

@@ -1,27 +1,3 @@
-// import React from "react";
-// import "./Navbar.Module.css";
-// const Navbar = () => {
-//   return (
-//     <>
-//       <div className="navbar-container">
-//         <div className="navbar-menu">
-//           <div className="nav-left">
-//             <i class="fa-solid fa-cookie-bite"></i>
-//             PyDiyet
-//           </div>
-//           <div className="nav-right">
-//             <div className="category">Category</div>
-//             <div className="contact">Contact</div>
-//             <div className="login">Login</div>
-//             <div className="register">Register</div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Navbar;
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.Module.css";
@@ -40,7 +16,7 @@ const Navbar = () => {
   const user = useSelector((state) => state.diet.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const info = useSelector((state) => state.diet.personDetail);
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -53,6 +29,7 @@ const Navbar = () => {
         console.log(error.message);
       });
   };
+  console.log(info);
   return (
     <>
       <div className={click ? "main-container" : ""} onClick={() => Close()} />
