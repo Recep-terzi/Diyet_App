@@ -9,6 +9,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 const DetailPerson = () => {
   const [loading, setLoading] = useState(true);
+  const [name, setName] = useState();
+  const [surname, setSurname] = useState();
   const [tc, setTc] = useState();
   const [age, setAge] = useState();
   const [boy, setBoy] = useState();
@@ -27,6 +29,8 @@ const DetailPerson = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const doc = {
+      name: name,
+      surname: surname,
       tc: tc,
       age: age,
       boy: boy,
@@ -99,6 +103,24 @@ const DetailPerson = () => {
           <div className="detailperson-container">
             <div className="detailperson-title">Kullanıcı detayları</div>
             <form onSubmit={handleSubmit}>
+              <div className="name-surname">
+                <div className="person-name">
+                  <label> İsim </label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="surname">
+                  <label> Soyisim </label>
+                  <input
+                    type="text"
+                    value={surname}
+                    onChange={(e) => setSurname(e.target.value)}
+                  />
+                </div>
+              </div>
               <div className="tc-number">
                 <label> Tc Kimlik Numara </label>
                 <input
@@ -198,7 +220,7 @@ const DetailPerson = () => {
                 </div>
               </div>
               <div className="detailperson-button">
-                <button>Bilgileri ekle</button>
+                <button type="submit">Bilgileri ekle</button>
                 <button>İptal</button>
               </div>
             </form>

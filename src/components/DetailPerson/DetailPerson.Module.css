@@ -7,7 +7,7 @@
   margin: auto;
   background-color: #fff;
   width: 470px;
-  height: 650px;
+  height: 720px;
   border-radius: 20px;
   padding: 40px;
 }
@@ -46,7 +46,9 @@ input::-webkit-inner-spin-button {
 .age input,
 .boy input,
 .kilo input,
+.person-name input,
 .yemek input,
+.surname input,
 .hedefKilo input,
 .ilgi input {
   width: 100%;
@@ -98,10 +100,18 @@ input::-webkit-inner-spin-button {
   background-color: #5ba070;
   transition: 0.3s ease-in;
 }
+
 .detailperson-button button:last-child {
   width: 30%;
 }
 .detailperson-button button:last-child:hover {
   background-color: red;
   transition: 0.3s ease-in;
+}
+.name-surname {
+  display: flex;
+  margin-bottom: 5px;
+}
+.name-surname .surname {
+  margin-left: 5px;
 }
