@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import avatar from "../../assets/avatar.png";
 import "./PesonelPage.Module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
+import { person } from "../../redux/dietSlice";
 const PersonelPage = () => {
+  const detail = useSelector((state) => state.diet.personDetail);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const ref = collection(db, "personDetail");
+    getDocs(ref).then((snap) => {
+      let result = [];
+
+      snap.forEach((doc) => {
+        result.push({
+          ...doc.data(),
+          id: doc.id,
+        });
+      });
+
+      dispatch(person(result));
+    });
+    // return unsub;
+  }, [dispatch]);
+  console.log(detail);
   return (
     <>
       <ExtraNavbar />
@@ -30,7 +53,7 @@ const PersonelPage = () => {
                 </div>
                 <div className="personel-tc">
                   <span>T.C Kimlik Numarası</span>
-                  <input type="text" value="25895597886" />
+                  <input type="text" value={detail[0].tc} />
                 </div>
               </div>
 
@@ -39,27 +62,27 @@ const PersonelPage = () => {
 
                 <div className="personel-yas">
                   <span>Yaş</span>
-                  <input type="text" value="20" />
+                  <input type="text" value={detail[0].yas} />
                 </div>
                 <div className="personel-boy">
                   <span>Boy</span>
-                  <input type="text" value="1.72" />
+                  <input type="text" value={detail[0].boy} />
                 </div>
                 <div className="personel-kilo">
                   <span>Kilo</span>
-                  <input type="text" value="68" />
+                  <input type="text" value={detail[0].kilo} />
                 </div>
                 <div className="personel-yemek">
                   <span>Sevdiğim Yemek</span>
-                  <input type="text" value="Tavuk" />
+                  <input type="text" value={detail[0].yemek} />
                 </div>
                 <div className="personel-hedef">
                   <span>Hedef Kilom</span>
-                  <input type="text" value="80" />
+                  <input type="text" value={detail[0].hedefKilo} />
                 </div>
                 <div className="personel-ilgi">
                   <span>İlgi Alanım</span>
-                  <input type="text" value="Yazılım" />
+                  <input type="text" value={detail[0].ilgi} />
                 </div>
               </div>
 
@@ -68,19 +91,31 @@ const PersonelPage = () => {
 
                 <div className="personel-kronik">
                   <span>Kronik Hastalık</span>
-                  <input type="checkbox" checked />
+                  <input
+                    type="checkbox"
+                    checked={detail[0].kronik ? true : false}
+                  />
                 </div>
                 <div className="personel-alerji">
                   <span>Alerji</span>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={detail[0].alerji ? true : false}
+                  />
                 </div>
                 <div className="personel-evli">
                   <span>Evli</span>
-                  <input type="checkbox" checked />
+                  <input
+                    type="checkbox"
+                    checked={detail[0].evli ? true : false}
+                  />
                 </div>
                 <div className="personel-ozel">
                   <span>Özel Durum</span>
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    checked={detail[0].özel ? true : false}
+                  />
                 </div>
               </div>
               <div className="personel-button">
