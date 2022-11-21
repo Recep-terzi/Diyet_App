@@ -3,7 +3,7 @@ import "./Main.Module.css";
 import breakfast from "../../assets/breakfast.jpg";
 import lunch from "../../assets/lunch.jpg";
 import dinner from "../../assets/dinner.jpg";
-import { Link } from "react-router-dom";
+import Breakfast from "../Breakfast/Breakfast";
 const Main = () => {
   return (
     <>
@@ -81,7 +81,14 @@ const Main = () => {
             <img src={dinner} alt="Sağlıklı yaşam" className="saglik-img" />
           </div>
         </div>
-        <div id="breakfast">Kahvaltı</div>
+        <div id="breakfast">
+          <div className="breakfast-title">Kahvaltı Programlarımız</div>
+          <p className="breakfast-description">
+            Daha detaylı bilgi için diyetisyenimiz ile iletişime geçip kendinize
+            uygun programı hazırlatabilirsiniz.
+          </p>
+          <Breakfast />
+        </div>
         <div id="lunch">Ara öğün</div>
         <div id="dinner">Akşam yemeği</div>
       </div>
