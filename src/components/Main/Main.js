@@ -1,17 +1,19 @@
 import React from "react";
 import "./Main.Module.css";
-import saglik from "../../assets/saglik.jpg";
-import saglik2 from "../../assets/saglik2.jpg";
-import saglik3 from "../../assets/saglik3.jpg";
-import { useDispatch, useSelector } from "react-redux";
-
+import breakfast from "../../assets/breakfast.jpg";
+import lunch from "../../assets/lunch.jpg";
+import dinner from "../../assets/dinner.jpg";
+import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <>
-      <div className="container">
-        <div className="row">
+      <div className="container ">
+        <div className="main-head-title"> ~ Öğün Diyet Programlarımız ~</div>
+        <div className="row main-row">
           <div className="col-md-6">
-            <div className="main-title">Lorem, ipsum dolor.</div>
+            <div className="main-title">
+              <a href="#breakfast">Sabahların vazgeçilmezi. Kahvaltı</a>
+            </div>
             <div className="main-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
               aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo
@@ -28,15 +30,17 @@ const Main = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <img src={saglik} alt="Sağlıklı yaşam" className="saglik-img" />
+            <img src={breakfast} alt="Sağlıklı yaşam" className="saglik-img" />
           </div>
         </div>
-        <div className="row">
+        <div className="row main-row">
           <div className="col-md-6">
-            <img src={saglik2} alt="Sağlıklı yaşam" className="saglik-img" />
+            <img src={lunch} alt="Sağlıklı yaşam" className="saglik-img" />
           </div>
           <div className="col-md-6">
-            <div className="main-title">Lorem, ipsum dolor.</div>
+            <div className="main-title">
+              <a href="#lunch">Olmazsa olmaz. Ara Öğün</a>
+            </div>
             <div className="main-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
               aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo
@@ -53,9 +57,11 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row main-row">
           <div className="col-md-6">
-            <div className="main-title">Lorem, ipsum dolor.</div>
+            <div className="main-title">
+              <a href="#dinner">Ve tabi ki Akşam Yemeği</a>
+            </div>
             <div className="main-description">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
               aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo
@@ -72,9 +78,12 @@ const Main = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <img src={saglik3} alt="Sağlıklı yaşam" className="saglik-img" />
+            <img src={dinner} alt="Sağlıklı yaşam" className="saglik-img" />
           </div>
         </div>
+        <div id="breakfast">Kahvaltı</div>
+        <div id="lunch">Ara öğün</div>
+        <div id="dinner">Akşam yemeği</div>
       </div>
     </>
   );
