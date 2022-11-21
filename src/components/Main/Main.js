@@ -6,6 +6,12 @@ import dinner from "../../assets/dinner.jpg";
 import Breakfast from "../Breakfast/Breakfast";
 import Lunch from "../Lunch/Lunch";
 import Dinner from "../Dinner/Dinner";
+import {
+  BsFillSunFill,
+  BsFillCloudFill,
+  BsFillMoonStarsFill,
+} from "react-icons/bs";
+
 const Main = () => {
   return (
     <>
@@ -13,6 +19,8 @@ const Main = () => {
         <div className="main-head-title"> ~ Öğün Diyet Programlarımız ~</div>
         <div className="row main-row">
           <div className="col-md-6">
+            <BsFillSunFill />
+
             <div className="main-title">
               <a href="#breakfast">Sabahların vazgeçilmezi. Kahvaltı</a>
             </div>
@@ -39,7 +47,9 @@ const Main = () => {
           <div className="col-md-6">
             <img src={lunch} alt="Sağlıklı yaşam" className="saglik-img" />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 lunch">
+            <BsFillCloudFill />
+
             <div className="main-title">
               <a href="#lunch">Olmazsa olmaz. Ara Öğün</a>
             </div>
@@ -60,7 +70,8 @@ const Main = () => {
           </div>
         </div>
         <div className="row main-row">
-          <div className="col-md-6">
+          <div className="col-md-6 dinner">
+            <BsFillMoonStarsFill />
             <div className="main-title">
               <a href="#dinner">Ve tabi ki Akşam Yemeği</a>
             </div>

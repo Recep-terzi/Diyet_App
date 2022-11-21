@@ -68,3 +68,21 @@
 #dinner {
   padding-top: 150px;
 }
+
+.main-row .col-md-6 svg {
+  position: absolute;
+  font-size: 130px;
+  color: yellow;
+  margin-left: -120px;
+  margin-top: -50px;
+}
+.main-row .lunch svg {
+  position: absolute;
+  font-size: 130px;
+  color: rgb(0, 102, 255);
+  margin-left: 670px;
+}
+.main-row .dinner svg {
+  color: rgb(102, 102, 102);
+  margin-left: -130px;
+}
