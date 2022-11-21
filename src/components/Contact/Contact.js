@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import contact from "../../assets/contact.png";
 import "./Contact.Module.css";
+import emailjs from "@emailjs/browser";
+import alertify from "alertifyjs";
+import "alertifyjs/build/css/alertify.css";
+
 const Contact = () => {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+  const form = useRef();
+  const mailSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_sl7gx4j",
+        "template_sinu99p",
+        form.current,
+        "PpZTOFvtkDXZuH1A6"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setName("");
+    setEmail("");
+    setMessage("");
+    alertify.success("Mail'iniz başarıyla gönderildi. :)");
+  };
   return (
     <>
       <ExtraNavbar />
@@ -19,20 +49,37 @@ const Contact = () => {
               Bize ulaşın, uygun programı size sunalım.
             </div>
             <div className="contact-form">
-              <form>
+              <form onSubmit={mailSubmit} ref={form}>
                 <div className="username-form">
                   <label>Adınız :</label>
-                  <input type="text" />
+                  <input
+                    type="text"
+                    name="user_name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </div>
                 <div className="email-form">
                   <label>Email Adresiniz:</label>
 
-                  <input type="text" />
+                  <input
+                    type="text"
+                    name="user_email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className="message-form">
                   <label>Mesajınız:</label>
 
-                  <textarea name="" id="" cols="20" rows="3"></textarea>
+                  <textarea
+                    id=""
+                    cols="20"
+                    rows="3"
+                    name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
                 </div>
                 <div className="contact-button">
                   <button>Gönder</button>
