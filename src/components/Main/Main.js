@@ -4,6 +4,8 @@ import breakfast from "../../assets/breakfast.jpg";
 import lunch from "../../assets/lunch.jpg";
 import dinner from "../../assets/dinner.jpg";
 import Breakfast from "../Breakfast/Breakfast";
+import Lunch from "../Lunch/Lunch";
+import Dinner from "../Dinner/Dinner";
 const Main = () => {
   return (
     <>
@@ -89,8 +91,22 @@ const Main = () => {
           </p>
           <Breakfast />
         </div>
-        <div id="lunch">Ara öğün</div>
-        <div id="dinner">Akşam yemeği</div>
+        <div id="lunch">
+          <div className="lunch-title">Ara Öğün Programlarımız</div>
+          <p className="lunch-description">
+            Daha detaylı bilgi için diyetisyenimiz ile iletişime geçip kendinize
+            uygun programı hazırlatabilirsiniz.
+          </p>
+          <Lunch />
+        </div>
+        <div id="dinner">
+          <div className="dinner-title">Akşam Yemeği Programlarımız</div>
+          <p className="dinner-description">
+            Daha detaylı bilgi için diyetisyenimiz ile iletişime geçip kendinize
+            uygun programı hazırlatabilirsiniz.
+          </p>
+          <Dinner />
+        </div>
       </div>
     </>
   );

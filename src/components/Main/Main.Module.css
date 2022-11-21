@@ -49,12 +49,16 @@
   background: #000;
 }
 
-.breakfast-title {
+.breakfast-title,
+.lunch-title,
+.dinner-title {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
 }
-.breakfast-description {
+.breakfast-description,
+.lunch-description,
+.dinner-description {
   text-align: center;
   font-weight: 600;
   opacity: 0.8;
