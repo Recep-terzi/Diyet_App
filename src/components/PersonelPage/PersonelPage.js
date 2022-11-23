@@ -5,13 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import avatar from "../../assets/avatar.png";
 import "./PesonelPage.Module.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  collection,
-  getDocs,
-  onSnapshot,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { person } from "../../redux/dietSlice";
 import { Link } from "react-router-dom";
@@ -52,7 +46,9 @@ const PersonelPage = () => {
                   </div>
 
                   <div className="col-md-9 personel-row-9">
-                    <div className="personel-title">Kişisel Sayfam - {user.displayName} </div>
+                    <div className="personel-title">
+                      Kişisel Sayfam - {user.displayName}{" "}
+                    </div>
                     <div className="personel-info">
                       <p className="personel-title-2">Kişisel bilgiler</p>
 
