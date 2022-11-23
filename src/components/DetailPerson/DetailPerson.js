@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import bg from "../../assets/detailperson.png";
+import detailbg from "../../assets/detailbg.jpeg";
 import { person } from "../../redux/dietSlice";
 import Loading from "../Loading/Loading";
 import "./DetailPerson.Module.css";
@@ -59,7 +60,7 @@ const DetailPerson = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      document.body.style.backgroundImage = `url(${bg})`;
+      document.body.style.backgroundImage = `url(${detailbg})`;
       document.body.style.backgroundSize = "cover";
       setLoading(false);
     }, 2000);

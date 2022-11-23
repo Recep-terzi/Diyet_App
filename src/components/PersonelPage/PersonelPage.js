@@ -52,7 +52,7 @@ const PersonelPage = () => {
                   </div>
 
                   <div className="col-md-9 personel-row-9">
-                    <div className="personel-title">Kişisel Sayfam</div>
+                    <div className="personel-title">Kişisel Sayfam - {user.displayName} </div>
                     <div className="personel-info">
                       <p className="personel-title-2">Kişisel bilgiler</p>
 

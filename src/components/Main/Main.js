@@ -25,18 +25,26 @@ const Main = () => {
               <a href="#breakfast">Sabahların vazgeçilmezi. Kahvaltı</a>
             </div>
             <div className="main-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
-              aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo
-              reprehenderit mollitia nihil similique saepe expedita dicta?
-              Recusandae suscipit voluptatum aliquid ratione dicta, quia harum
-              ipsam eos culpa iste sed. Adipisci laudantium porro dolorum sed
-              blanditiis neque atque corrupti, expedita eveniet asperiores eum
-              exercitationem animi deserunt, dolore, commodi maxime illo iusto
-              ex vel at. Sunt tempore alias voluptatibus earum ipsum dolorem
-              deserunt doloribus, quam distinctio odio aperiam quia suscipit id
-              repudiandae laudantium ab exercitationem voluptate ut eveniet
-              placeat impedit quas, sequi numquam sapiente. Ipsum, nemo qui?
-              Sunt qui doloribus blanditiis nisi! Quod.
+              Tüm öğünler içinde başka bir yeri vardır kahvaltının; hem fiziksel
+              hem de psikolojik olarak. Pazartesi'den Cuma’ya ayaküstü ve hızlı
+              bir öğünken hafta sonları bir ritüele dönüşür. Bir Fransız
+              kruvasansız, Türk ise simitsiz kahvaltıya oturmaz. İtalyanların
+              espressosuna karşı ince belli bardakta tavşan kanı çay içilir
+              Türkiye’de. Van’da 40 çeşit masaya sığmaz, Ege’de sızma
+              zeytinyağsız kahvaltıya oturulmaz, Hatay’da nar ekşisiz sofra
+              kurulmaz. Nerede olursanız olun güne atılan ilk adımın
+              habercisidir kahvaltı ve gün nasıl başlarsa öyle gider. Daha
+              ilkokul çağlarımızdan itibaren şarkılarla önemi anlatılan bu
+              öğünün günün en aktif dönemlerinde enerji ihtiyacımızı karşılıyor
+              olması bir gerçek. Bu nedenle bir yumurta sütle çırpılıp birazcık
+              ekmek, biraz da peynir yenmeden gün içinde verimli olmanın çok da
+              mümkün olmadığı söylenebilir. İşte daha okul çağlarımızda
+              şarkılarla verilen mesajı biraz açacak olursak dengeli beslenmenin
+              ve kahvaltıda yenmesi gereken gıdaların formülünü yakalamış
+              oluruz. Her öğünde olduğu gibi kahvaltıda da
+              protein-yağ-karbonhidrat dengesini kurmak önemlidir. Bunun yanında
+              çocukluk çağında çeşitli gıdaların tadına alışmak açısından da
+              kahvaltıdaki çeşitliliğin önemini vurgulamak gerekir.
             </div>
           </div>
           <div className="col-md-6">
