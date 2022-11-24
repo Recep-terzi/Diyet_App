@@ -3,7 +3,7 @@
 }
 .diet-list {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
 }
 
 .diet-list-item {
@@ -65,3 +65,44 @@
 /* .diet-list-col-md-3 {
   position: fixed;
 } */
+
+.dietlist-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+}
+.filter button {
+  border: none;
+  background-color: #497d59;
+  padding: 8px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 10px;
+}
+.filter button:hover {
+  background-color: #9cc069;
+  transition: 0.3s ease-in;
+}
+.dietlist-notuser {
+  margin-top: 302px;
+  margin-bottom: 301px;
+}
+
+.dietlist-notuser p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.dietlist-notuser p a {
+  color: #497d59;
+  text-decoration: none;
+}
+.dietlist-notuser p a:hover {
+  text-decoration: underline;
+}

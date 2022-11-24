@@ -1,120 +1,137 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./DietList.Module.css";
 const DietList = () => {
+  const user = useSelector((state) => state.diet.user);
   return (
     <>
       <ExtraNavbar />
       <Navbar />
-      <div className="dietlist-container">
-        <div className="container">
-          <div className="diet-list-row row">
-            <div className="col-md-3 ">
-              <div className="diet-list-col-md-3">
-                <div className="filter-title">Filterele</div>
-                <div className="diet-list-filter">
-                  <ul>
-                    <li>Sabah - Kahvaltı</li>
-                    <li>Öğle Yemeği - Lunch</li>
-                    <li>Akşam Yemeği</li>
-                  </ul>
-                </div>
-                <div className="item-add">
-                  <button>Diyet listesi oluştur</button>
-                </div>
+      {user ? (
+        <>
+          <div className="dietlist-container">
+            <div className="container">
+              <div className="dietlist-title">~ Diyet Listeleri ~</div>
+              <div className="filter">
+                <button>Sabah - Kahvaltı</button>
+                <button>Öğle Yemeği</button>
+                <button>Akşam Yemeği</button>
+                {user ? (
+                  <>
+                    {user.email === "recepterzi-67@hotmail.com" && (
+                      <>
+                        <button>Diyet listesi oluştur</button>
+                      </>
+                    )}
+                  </>
+                ) : (
+                  ""
+                )}
               </div>
-            </div>
-            <div className="col-md-9 diet-list">
-              <div className="diet-list-item">
-                <div className="diet-list-title">Ara öğün</div>
-                <div className="diet-list-description">
-                  <p>
-                    <span>Diyet Tipi :</span> Hafif
-                  </p>
-                  <p>
-                    <span>Diyet Zamanı : </span> Öğle Yemeği
-                  </p>
-                  <p>
-                    <span>Diyet Kalorisi :</span> 100 Kalori
-                  </p>
+              <div className="diet-list">
+                <div className="diet-list-item">
+                  <div className="diet-list-title">Ara öğün</div>
+                  <div className="diet-list-description">
+                    <p>
+                      <span>Diyet Tipi :</span> Hafif
+                    </p>
+                    <p>
+                      <span>Diyet Zamanı : </span> Öğle Yemeği
+                    </p>
+                    <p>
+                      <span>Diyet Kalorisi :</span> 100 Kalori
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="diet-list-item">
-                <div className="diet-list-title">Ara öğün</div>
-                <div className="diet-list-description">
-                  <p>
-                    <span>Diyet Tipi :</span> Hafif
-                  </p>
-                  <p>
-                    <span>Diyet Zamanı : </span> Öğle Yemeği
-                  </p>
-                  <p>
-                    <span>Diyet Kalorisi :</span> 100 Kalori
-                  </p>
+                <div className="diet-list-item">
+                  <div className="diet-list-title">Ara öğün</div>
+                  <div className="diet-list-description">
+                    <p>
+                      <span>Diyet Tipi :</span> Hafif
+                    </p>
+                    <p>
+                      <span>Diyet Zamanı : </span> Öğle Yemeği
+                    </p>
+                    <p>
+                      <span>Diyet Kalorisi :</span> 100 Kalori
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="diet-list-item">
-                <div className="diet-list-title">Ara öğün</div>
-                <div className="diet-list-description">
-                  <p>
-                    <span>Diyet Tipi :</span> Hafif
-                  </p>
-                  <p>
-                    <span>Diyet Zamanı : </span> Öğle Yemeği
-                  </p>
-                  <p>
-                    <span>Diyet Kalorisi :</span> 100 Kalori
-                  </p>
+                <div className="diet-list-item">
+                  <div className="diet-list-title">Ara öğün</div>
+                  <div className="diet-list-description">
+                    <p>
+                      <span>Diyet Tipi :</span> Hafif
+                    </p>
+                    <p>
+                      <span>Diyet Zamanı : </span> Öğle Yemeği
+                    </p>
+                    <p>
+                      <span>Diyet Kalorisi :</span> 100 Kalori
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="diet-list-item">
-                <div className="diet-list-title">Ara öğün</div>
-                <div className="diet-list-description">
-                  <p>
-                    <span>Diyet Tipi :</span> Hafif
-                  </p>
-                  <p>
-                    <span>Diyet Zamanı : </span> Öğle Yemeği
-                  </p>
-                  <p>
-                    <span>Diyet Kalorisi :</span> 100 Kalori
-                  </p>
+                <div className="diet-list-item">
+                  <div className="diet-list-title">Ara öğün</div>
+                  <div className="diet-list-description">
+                    <p>
+                      <span>Diyet Tipi :</span> Hafif
+                    </p>
+                    <p>
+                      <span>Diyet Zamanı : </span> Öğle Yemeği
+                    </p>
+                    <p>
+                      <span>Diyet Kalorisi :</span> 100 Kalori
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="diet-list-item">
-                <div className="diet-list-title">Ara öğün</div>
-                <div className="diet-list-description">
-                  <p>
-                    <span>Diyet Tipi :</span> Hafif
-                  </p>
-                  <p>
-                    <span>Diyet Zamanı : </span> Öğle Yemeği
-                  </p>
-                  <p>
-                    <span>Diyet Kalorisi :</span> 100 Kalori
-                  </p>
+                <div className="diet-list-item">
+                  <div className="diet-list-title">Ara öğün</div>
+                  <div className="diet-list-description">
+                    <p>
+                      <span>Diyet Tipi :</span> Hafif
+                    </p>
+                    <p>
+                      <span>Diyet Zamanı : </span> Öğle Yemeği
+                    </p>
+                    <p>
+                      <span>Diyet Kalorisi :</span> 100 Kalori
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="diet-list-item">
-                <div className="diet-list-title">Ara öğün</div>
-                <div className="diet-list-description">
-                  <p>
-                    <span>Diyet Tipi :</span> Hafif
-                  </p>
-                  <p>
-                    <span>Diyet Zamanı : </span> Öğle Yemeği
-                  </p>
-                  <p>
-                    <span>Diyet Kalorisi :</span> 100 Kalori
-                  </p>
+                <div className="diet-list-item">
+                  <div className="diet-list-title">Ara öğün</div>
+                  <div className="diet-list-description">
+                    <p>
+                      <span>Diyet Tipi :</span> Hafif
+                    </p>
+                    <p>
+                      <span>Diyet Zamanı : </span> Öğle Yemeği
+                    </p>
+                    <p>
+                      <span>Diyet Kalorisi :</span> 100 Kalori
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      ) : (
+        <>
+          <div className="dietlist-notuser">
+            <p>
+              Özel diyet listelerinizi görmek, diyet listenizi takip etmek ve
+              diyet listelerini daha detaylı görmek için{" "}
+              <Link to="/login"> giriş yapınız.</Link>
+            </p>
+          </div>
+        </>
+      )}
       <Footer />
     </>
   );
