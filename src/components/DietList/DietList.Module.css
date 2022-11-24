@@ -55,13 +55,13 @@
 
 .item-add button {
   border: none;
-
+  width: 100%;
   padding: 10px;
   border-radius: 10px;
   background-color: #497d59;
   color: #fff;
 }
 
-.diet-list-col-md-3 {
+/* .diet-list-col-md-3 {
   position: fixed;
-}
+} */
