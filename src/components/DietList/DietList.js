@@ -14,9 +14,7 @@ const DietList = () => {
   const user = useSelector((state) => state.diet.user);
   const [open, setOpen] = React.useState(false);
   const [category, setCategory] = useState();
-  const [detail, setDetail] = useState(
-    useSelector((state) => state.diet.dietlist)
-  );
+
   const [filter, setFilter] = useState();
   const dispatch = useDispatch();
   const dietlist = useSelector((state) => state.diet.dietList);
@@ -44,7 +42,7 @@ const DietList = () => {
     setFilter(a);
   }, [dietlist, category, dispatch]);
   console.log(dietlist);
-  console.log(detail);
+  console.log(filter);
   return (
     <>
       <ExtraNavbar />
