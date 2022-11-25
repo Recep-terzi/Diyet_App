@@ -70,20 +70,18 @@ const DietList = () => {
               <div className="diet-list">
                 {dietlist.map((diet) => (
                   <>
-                    <Link to={`/diet/${diet.id}`}>
-                      <div className="diet-list-item">
-                        <div className="diet-list-title">{diet.title}</div>
-                        <div className="diet-list-description">
-                          <p>
-                            <span>Diyet Tipi :</span> {diet.type}
-                          </p>
-                          <p>
-                            <span>Diyet Zamanı : </span> {diet.time}
-                          </p>
-                          <p>
-                            <span>Diyet Kalorisi :</span> {diet.calory}
-                          </p>
-                        </div>
+                    <Link to={`/diet/${diet.id}`} className="diet-list-item">
+                      <div className="diet-list-title">{diet.title}</div>
+                      <div className="diet-list-description">
+                        <p>
+                          <span>Diyet Tipi :</span> {diet.type}
+                        </p>
+                        <p>
+                          <span>Diyet Zamanı : </span> {diet.time}
+                        </p>
+                        <p>
+                          <span>Diyet Kalorisi :</span> {diet.calory}
+                        </p>
                       </div>
                     </Link>
                   </>
