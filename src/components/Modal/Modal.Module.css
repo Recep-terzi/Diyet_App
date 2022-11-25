@@ -1,0 +1,40 @@
+#responsive-dialog-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.dialog {
+  border-radius: 210px;
+}
+.dialog-content-text {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.dialog-content {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+.form-btn-group {
+  display: flex;
+}
+.form-btn-group button:first-child {
+  width: 80%;
+  margin-right: 10px;
+  background-color: #497d59;
+}
+.form-btn-group button:last-child {
+  width: 20%;
+  background-color: #497d59;
+}
+.form-btn-group button:first-child:hover {
+  background-color: #9cc069;
+  transition: 0.3s ease;
+}
+.form-btn-group button:last-child:hover {
+  background-color: red;
+  transition: 0.3s ease;
+}

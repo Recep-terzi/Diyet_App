@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
 import Food from "./components/Food/Food";
 import Home from "./components/Home/Home";
@@ -15,9 +15,11 @@ import Register2 from "./components/Register2/Register2";
 import NotFound from "./components/404/NotFound";
 import DetailPerson from "./components/DetailPerson/DetailPerson";
 import DietList from "./components/DietList/DietList";
+import DietDetail from "./components/DietDetail/DietDetail";
 function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     onAuthStateChanged(auth, (userAuth) => {
       if (userAuth) {
@@ -52,6 +54,7 @@ function App() {
           <Route path="*" element={<NotFound />}></Route>
           <Route path="/detailperson" element={<DetailPerson />}></Route>
           <Route path="/dietlist" element={<DietList />}></Route>
+          <Route path="/diet/:id" element={<DietDetail />}></Route>
 
           <Route path="/register2" element={<Register2 />}></Route>
           <Route path="/personel" element={<PersonelPage />}></Route>

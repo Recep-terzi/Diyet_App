@@ -5,6 +5,7 @@ import diet5 from "../../assets/diet5.jpg";
 import diet7 from "../../assets/diet7.jpg";
 import diet8 from "../../assets/diet8.jpg";
 import diet9 from "../../assets/diet9.jpg";
+import diet11 from "../../assets/diet11.jpg";
 import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
@@ -68,9 +69,9 @@ const Home = () => {
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src={diet5}
+                    src={diet11}
                     alt="Los Angeles"
-                    className="d-block w-100 "
+                    className="d-block w-100 diet11-setting"
                   />
                 </div>
                 <div className="carousel-item">

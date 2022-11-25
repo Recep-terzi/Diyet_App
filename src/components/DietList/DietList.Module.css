@@ -106,3 +106,7 @@
 .dietlist-notuser p a:hover {
   text-decoration: underline;
 }
+.diet-list a {
+  text-decoration: none;
+  color: #000;
+}

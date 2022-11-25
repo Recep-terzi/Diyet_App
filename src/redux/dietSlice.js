@@ -6,6 +6,8 @@ export const dietSlice = createSlice({
     user: null,
     login: [],
     personDetail: [],
+    dietList: [],
+    listDetail: [],
   },
   reducers: {
     login: (state, action) => {
@@ -17,8 +19,15 @@ export const dietSlice = createSlice({
     person: (state, action) => {
       state.personDetail = action.payload;
     },
+    dietList: (state, action) => {
+      state.dietList = action.payload;
+    },
+    listDetail: (state, action) => {
+      state.listDetail = action.payload;
+    },
   },
 });
 
-export const { logout, login, person } = dietSlice.actions;
+export const { logout, login, person, dietList, listDetail } =
+  dietSlice.actions;
 export default dietSlice.reducer;
