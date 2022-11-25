@@ -110,3 +110,10 @@
   text-decoration: none;
   color: #000;
 }
+.dietlist-err {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 147px;
+  margin-bottom: 146px;
+}

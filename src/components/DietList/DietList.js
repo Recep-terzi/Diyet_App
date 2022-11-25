@@ -13,6 +13,11 @@ import { dietList } from "../../redux/dietSlice";
 const DietList = () => {
   const user = useSelector((state) => state.diet.user);
   const [open, setOpen] = React.useState(false);
+  const [category, setCategory] = useState();
+  const [detail, setDetail] = useState(
+    useSelector((state) => state.diet.dietlist)
+  );
+  const [filter, setFilter] = useState();
   const dispatch = useDispatch();
   const dietlist = useSelector((state) => state.diet.dietList);
   const handleClickOpen = () => {
@@ -33,7 +38,13 @@ const DietList = () => {
     });
     return unsub;
   }, [dispatch, user]);
+
+  useEffect(() => {
+    const a = dietlist.filter((x) => x.title === category);
+    setFilter(a);
+  }, [dietlist, category, dispatch]);
   console.log(dietlist);
+  console.log(detail);
   return (
     <>
       <ExtraNavbar />
@@ -44,9 +55,16 @@ const DietList = () => {
             <div className="container">
               <div className="dietlist-title">~ Diyet Listeleri ~</div>
               <div className="filter">
-                <button>Sabah - Kahvaltı</button>
-                <button>Öğle Yemeği</button>
-                <button>Akşam Yemeği</button>
+                <button onClick={() => setCategory()}>Hepsi</button>
+                <button onClick={() => setCategory("Kahvaltı")}>
+                  Sabah - Kahvaltı
+                </button>
+                <button onClick={() => setCategory("Öğle Yemeği")}>
+                  Öğle Yemeği
+                </button>
+                <button onClick={() => setCategory("Akşam Yemeği")}>
+                  Akşam Yemeği
+                </button>
                 {user ? (
                   <>
                     {user.email === "recepterzi-67@hotmail.com" && (
@@ -67,26 +85,42 @@ const DietList = () => {
                 )}
               </div>
 
-              <div className="diet-list">
-                {dietlist.map((diet) => (
-                  <>
-                    <Link to={`/diet/${diet.id}`} className="diet-list-item">
-                      <div className="diet-list-title">{diet.title}</div>
-                      <div className="diet-list-description">
-                        <p>
-                          <span>Diyet Tipi :</span> {diet.type}
-                        </p>
-                        <p>
-                          <span>Diyet Zamanı : </span> {diet.time}
-                        </p>
-                        <p>
-                          <span>Diyet Kalorisi :</span> {diet.calory}
-                        </p>
-                      </div>
-                    </Link>
-                  </>
-                ))}
-              </div>
+              {dietlist && (
+                <>
+                  <div className="diet-list">
+                    {dietlist.map((diet) => (
+                      <>
+                        <Link
+                          to={`/diet/${diet.id}`}
+                          className="diet-list-item"
+                        >
+                          <div className="diet-list-title">{diet.title}</div>
+                          <div className="diet-list-description">
+                            <p>
+                              <span>Diyet Tipi :</span> {diet.type}
+                            </p>
+                            <p>
+                              <span>Diyet Zamanı : </span> {diet.time}
+                            </p>
+                            <p>
+                              <span>Diyet Kalorisi :</span> {diet.calory}
+                            </p>
+                          </div>
+                        </Link>
+                      </>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {dietlist.length === 0 && (
+                <>
+                  <div className="dietlist-err">
+                    Diyet listeleri bilgileriniz bulunmamıştır. Lütfen
+                    diyetisyen ile iletişime geçiniz.
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </>
