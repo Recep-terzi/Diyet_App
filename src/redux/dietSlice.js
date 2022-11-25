@@ -7,7 +7,7 @@ export const dietSlice = createSlice({
     login: [],
     personDetail: [],
     dietList: [],
-    listDetail: [],
+    listDetail: null,
   },
   reducers: {
     login: (state, action) => {

@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { listDetail } from "../../redux/dietSlice";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
+import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
+import "./DietDetail.Module.css";
 const DietDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -27,6 +29,40 @@ const DietDetail = () => {
     <>
       <ExtraNavbar />
       <Navbar />
+      {listdetail && (
+        <>
+          <div className="dietdetail-container">
+            <div className="container">
+              <div className="dietdetail-title">{listdetail[0].title}</div>
+
+              <div className="diet-detail-food">
+                <p>Yenilecek besinler</p>
+                <ul type="square">
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                  <li>Lorem, ipsum dolor.</li>
+                </ul>
+              </div>
+              <div className="dietdetail-degerler">
+                <p>Karbonhidrat :</p>
+                <p>Protein :</p>
+                <p>Yağ :</p>
+                <p>Kalori :</p>
+                <p>Şeker :</p>
+                <p>Tuz :</p>
+              </div>
+              <div className="dietdetail-description">
+                <p>Diyet Açıklaması</p>
+                <p>{listdetail[0].description}</p>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,39 @@
+.dietdetail-container {
+  margin-top: 200px;
+}
+.dietdetail-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+}
+.diet-detail-food {
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.diet-detail-food ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.diet-detail-food ul li {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.dietdetail-description p {
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.dietdetail-description p:last-child {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.dietdetail-degerler p {
+  font-weight: bold;
+}
