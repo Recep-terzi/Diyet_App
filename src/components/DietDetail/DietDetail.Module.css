@@ -13,7 +13,30 @@
   font-size: 30px;
   font-weight: bold;
 }
+.food {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
 
+.food-card {
+  margin: 5px;
+}
+.food-card img {
+  width: 100%;
+  border-radius: 30px;
+}
+.food-detail-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.food-card p {
+  font-size: 20px;
+  font-weight: normal;
+}
+.food-card p span {
+  font-weight: bold;
+}
 .diet-detail-food ul {
   display: flex;
   justify-content: space-around;
