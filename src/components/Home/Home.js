@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Home.Module.css";
-import diet6 from "../../assets/diet6.jpg";
-import diet5 from "../../assets/diet5.jpg";
-import diet7 from "../../assets/diet7.jpg";
-import diet8 from "../../assets/diet8.jpg";
-import diet9 from "../../assets/diet9.jpg";
-import diet11 from "../../assets/diet11.jpg";
+import main1 from "../../assets/main1.jpg";
+import main2 from "../../assets/main2.jpg";
+import main3 from "../../assets/main3.jpg";
+import main4 from "../../assets/main4.jpg";
+import main6 from "../../assets/main6.jpg";
 import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
@@ -69,25 +68,24 @@ const Home = () => {
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src={diet11}
+                    src={main1}
                     alt="Los Angeles"
                     className="d-block w-100 diet11-setting"
+                    style={{ paddingTop: "30px" }}
                   />
                 </div>
                 <div className="carousel-item">
-                  <img src={diet6} alt="Chicago" className="d-block w-100" />
+                  <img src={main2} alt="Chicago" className="d-block w-100" />
                 </div>
                 <div className="carousel-item">
-                  <img src={diet5} alt="New York" className="d-block w-100" />
+                  <img src={main3} alt="New York" className="d-block w-100" />
                 </div>
                 <div className="carousel-item">
-                  <img src={diet7} alt="New York" className="d-block w-100" />
+                  <img src={main4} alt="New York" className="d-block w-100" />
                 </div>
+
                 <div className="carousel-item">
-                  <img src={diet8} alt="New York" className="d-block w-100" />
-                </div>
-                <div className="carousel-item">
-                  <img src={diet9} alt="New York" className="d-block w-100" />
+                  <img src={main6} alt="New York" className="d-block w-100" />
                 </div>
               </div>
 

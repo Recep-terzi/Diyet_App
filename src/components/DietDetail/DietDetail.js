@@ -1,5 +1,6 @@
+import axios from "axios";
 import { getDoc, doc } from "firebase/firestore";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/config";
@@ -12,6 +13,7 @@ const DietDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const listdetail = useSelector((state) => state.diet.listDetail);
+  const [food1, setFood1] = useState();
   useEffect(() => {
     const ref = doc(db, "dietList", id);
     const data = [];
@@ -24,7 +26,15 @@ const DietDetail = () => {
       dispatch(listDetail(data));
     });
   }, [dispatch, id]);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.edamam.com/api/food-database/v2/parser?app_id=cb8f4f39&app_key=%206a0e456db7ea1977cbb76658f9a9e795&ingr=${listdetail[0].food1}&nutrition-type=cooking`
+      )
+      .then((res) => setFood1(res.data.parsed));
+  }, [listdetail]);
   console.log(listdetail);
+  console.log(food1);
   return (
     <>
       <ExtraNavbar />
@@ -38,7 +48,7 @@ const DietDetail = () => {
               <div className="diet-detail-food">
                 <p>Yenilecek besinler</p>
                 <ul type="square">
-                  <li>Lorem, ipsum dolor.</li>
+                  <li>{food1[0].food.label}</li>
                   <li>Lorem, ipsum dolor.</li>
                   <li>Lorem, ipsum dolor.</li>
                   <li>Lorem, ipsum dolor.</li>

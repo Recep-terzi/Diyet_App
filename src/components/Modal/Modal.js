@@ -18,6 +18,7 @@ const Modal = ({ open, setOpen }) => {
   const [type, setType] = useState();
   const [time, setTime] = useState();
   const [calory, setCalory] = useState();
+  const [food1, setFood1] = useState();
   const user = useSelector((state) => state.diet.user);
   const [description, setDescription] = useState();
   const theme = useTheme();
@@ -42,6 +43,7 @@ const Modal = ({ open, setOpen }) => {
       type: type,
       time: time,
       calory: calory,
+      food1: food1,
       description: description,
       seller: user.displayName,
     };
@@ -125,6 +127,18 @@ const Modal = ({ open, setOpen }) => {
                 required
                 value={calory}
                 onChange={(e) => setCalory(e.target.value)}
+                autoComplete="off"
+                type="text"
+                fullWidth
+                variant="standard"
+              />
+              <TextField
+                margin="dense"
+                id="name"
+                label="1. Besin"
+                required
+                value={food1}
+                onChange={(e) => setFood1(e.target.value)}
                 autoComplete="off"
                 type="text"
                 fullWidth

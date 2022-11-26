@@ -37,11 +37,13 @@ const DietList = () => {
     return unsub;
   }, [dispatch, user]);
 
-  useEffect(() => {
+  const filterItem = (category) => {
     const a = dietlist.filter((x) => x.title === category);
     setFilter(a);
-  }, [dietlist, category, dispatch]);
-  console.log(dietlist);
+  };
+  const allItem = () => {
+    setFilter(dietlist);
+  };
   console.log(filter);
   return (
     <>
@@ -53,14 +55,14 @@ const DietList = () => {
             <div className="container">
               <div className="dietlist-title">~ Diyet Listeleri ~</div>
               <div className="filter">
-                <button onClick={() => setCategory()}>Hepsi</button>
-                <button onClick={() => setCategory("Kahvaltı")}>
+                <button onClick={() => allItem()}>Hepsi</button>
+                <button onClick={() => filterItem("Kahvaltı")}>
                   Sabah - Kahvaltı
                 </button>
-                <button onClick={() => setCategory("Öğle Yemeği")}>
+                <button onClick={() => filterItem("Öğle Yemeği")}>
                   Öğle Yemeği
                 </button>
-                <button onClick={() => setCategory("Akşam Yemeği")}>
+                <button onClick={() => filterItem("Akşam Yemeği")}>
                   Akşam Yemeği
                 </button>
                 {user ? (
@@ -83,7 +85,33 @@ const DietList = () => {
                 )}
               </div>
 
-              {dietlist && (
+              {filter ? (
+                <>
+                  <div className="diet-list">
+                    {filter.map((diet) => (
+                      <>
+                        <Link
+                          to={`/diet/${diet.id}`}
+                          className="diet-list-item"
+                        >
+                          <div className="diet-list-title">{diet.title}</div>
+                          <div className="diet-list-description">
+                            <p>
+                              <span>Diyet Tipi :</span> {diet.type}
+                            </p>
+                            <p>
+                              <span>Diyet Zamanı : </span> {diet.time}
+                            </p>
+                            <p>
+                              <span>Diyet Kalorisi :</span> {diet.calory}
+                            </p>
+                          </div>
+                        </Link>
+                      </>
+                    ))}
+                  </div>
+                </>
+              ) : (
                 <>
                   <div className="diet-list">
                     {dietlist.map((diet) => (
