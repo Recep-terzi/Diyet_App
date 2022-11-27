@@ -20,6 +20,10 @@ const Modal = ({ open, setOpen }) => {
   const [calory, setCalory] = useState();
   const [food1, setFood1] = useState();
   const [food2, setFood2] = useState();
+  const [food3, setFood3] = useState();
+  const [food4, setFood4] = useState();
+  const [food5, setFood5] = useState();
+  const [food6, setFood6] = useState();
   const user = useSelector((state) => state.diet.user);
   const [description, setDescription] = useState();
   const theme = useTheme();
@@ -46,6 +50,10 @@ const Modal = ({ open, setOpen }) => {
       calory: calory,
       food1: food1,
       food2: food2,
+      food3: food3,
+      food4: food4,
+      food5: food5,
+      food6: food6,
       description: description,
       seller: user.displayName,
     };
@@ -83,7 +91,9 @@ const Modal = ({ open, setOpen }) => {
             <DialogContentText className="dialog-content-text">
               Diyet listesinin içeriklerini buradan oluşturabilirsiniz.
               Kullanıcıya özel diyet programlarının detaylarını burada
-              açıklayabilirsiniz.
+              açıklayabilirsiniz. Diyet listesinde bulunan besinlerin
+              veritabanında olup olmadığını kontrol etmek için ürünler kısmından
+              ingilizce olarak kontrol sağlayınız.
             </DialogContentText>
             <div className="dialog-content">
               <TextField
@@ -153,6 +163,54 @@ const Modal = ({ open, setOpen }) => {
                 required
                 value={food2}
                 onChange={(e) => setFood2(e.target.value)}
+                autoComplete="off"
+                type="text"
+                fullWidth
+                variant="standard"
+              />
+              <TextField
+                margin="dense"
+                id="name"
+                label="3. Besin"
+                required
+                value={food3}
+                onChange={(e) => setFood3(e.target.value)}
+                autoComplete="off"
+                type="text"
+                fullWidth
+                variant="standard"
+              />
+              <TextField
+                margin="dense"
+                id="name"
+                label="4. Besin"
+                required
+                value={food4}
+                onChange={(e) => setFood4(e.target.value)}
+                autoComplete="off"
+                type="text"
+                fullWidth
+                variant="standard"
+              />
+              <TextField
+                margin="dense"
+                id="name"
+                label="5. Besin"
+                required
+                value={food5}
+                onChange={(e) => setFood5(e.target.value)}
+                autoComplete="off"
+                type="text"
+                fullWidth
+                variant="standard"
+              />
+              <TextField
+                margin="dense"
+                id="name"
+                label="6. Besin"
+                required
+                value={food6}
+                onChange={(e) => setFood6(e.target.value)}
                 autoComplete="off"
                 type="text"
                 fullWidth

@@ -37,8 +37,6 @@ const DietDetail = () => {
         <>
           <div className="dietdetail-container">
             <div className="container">
-              <div className="dietdetail-title">{listdetail[0].title}</div>
-
               <div className="diet-detail-food">
                 <p>Yenilecek besinler</p>
                 <FoodItem />
@@ -53,7 +51,6 @@ const DietDetail = () => {
               </div> */}
               <div className="dietdetail-description">
                 <p>Diyet Açıklaması</p>
-                <p>{listdetail[0].description}</p>
               </div>
             </div>
           </div>
