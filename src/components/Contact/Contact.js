@@ -11,6 +11,7 @@ import "alertifyjs/build/css/alertify.css";
 const Contact = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
+  const [subject, setSubject] = useState();
   const [message, setMessage] = useState();
   const form = useRef();
   const mailSubmit = (e) => {
@@ -33,6 +34,7 @@ const Contact = () => {
     setName("");
     setEmail("");
     setMessage("");
+    setSubject("");
     alertify.success("Mail'iniz başarıyla gönderildi. :)");
   };
   return (
@@ -54,7 +56,7 @@ const Contact = () => {
                   <label>Adınız :</label>
                   <input
                     type="text"
-                    name="user_name"
+                    name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -64,9 +66,18 @@ const Contact = () => {
 
                   <input
                     type="text"
-                    name="user_email"
+                    name="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="username-form">
+                  <label>Konu :</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                   />
                 </div>
                 <div className="message-form">

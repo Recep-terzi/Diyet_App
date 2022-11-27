@@ -16,7 +16,6 @@ const Navbar = () => {
   const user = useSelector((state) => state.diet.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const info = useSelector((state) => state.diet.personDetail);
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -29,7 +28,6 @@ const Navbar = () => {
         console.log(error.message);
       });
   };
-  console.log(info);
   return (
     <>
       <div className={click ? "main-container" : ""} onClick={() => Close()} />

@@ -21,6 +21,7 @@
   letter-spacing: 3px;
   margin-right: 30px;
 }
-.extra-navbar-container .right i {
+.extra-navbar-container .right a {
   margin-left: 10px;
+  color: #fff;
 }

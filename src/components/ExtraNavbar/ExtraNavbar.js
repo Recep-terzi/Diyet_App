@@ -1,5 +1,6 @@
 import React from "react";
 import "./ExtraNavbar.Module.css";
+import { AiFillInstagram, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 const ExtraNavbar = () => {
   return (
     <div>
@@ -9,9 +10,15 @@ const ExtraNavbar = () => {
         </div>
         <div className="right">
           <span>+90 530 099 67 39</span>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://instgram.com/recepterziiii">
+            <AiFillInstagram />
+          </a>
+          <a href="https://linkedin.com/in/recepterzi">
+            <AiFillLinkedin />
+          </a>
+          <a href="https://github.com/recep-terzi">
+            <AiFillGithub />
+          </a>
         </div>
       </div>
     </div>
