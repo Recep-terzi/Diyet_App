@@ -62,18 +62,23 @@ const Main = () => {
               <a href="#lunch">Olmazsa olmaz. Ara Öğün</a>
             </div>
             <div className="main-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
-              aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo
-              reprehenderit mollitia nihil similique saepe expedita dicta?
-              Recusandae suscipit voluptatum aliquid ratione dicta, quia harum
-              ipsam eos culpa iste sed. Adipisci laudantium porro dolorum sed
-              blanditiis neque atque corrupti, expedita eveniet asperiores eum
-              exercitationem animi deserunt, dolore, commodi maxime illo iusto
-              ex vel at. Sunt tempore alias voluptatibus earum ipsum dolorem
-              deserunt doloribus, quam distinctio odio aperiam quia suscipit id
-              repudiandae laudantium ab exercitationem voluptate ut eveniet
-              placeat impedit quas, sequi numquam sapiente. Ipsum, nemo qui?
-              Sunt qui doloribus blanditiis nisi! Quod.
+              Sağlıklı ve dengeli beslenmenin altın kuralıdır 3 ana 3 ara öğün
+              şeklinde beslenmek. Ana öğünlerimi düzenli tüketiyorum fakat ara
+              öğünlerimi hep atlıyorum veya ara öğünlerde hangi tür besinleri
+              seçeceğimi ve ne miktarda tüketeceğini bilmiyorum diye yakınan
+              birçok kişi ile karşılaşıyorum… Peki ara öğün tüketmek neden bu
+              kadar önemli? Amaç; kan şekerinizi dengede tutup çabuk acıkmayı ve
+              bir sonraki öğünde çok fazla yemeyi engellemektir. Bir diğer
+              önemli konu ise; Ara öğün yapan kişide sık sık beslenmek
+              alışkanlık haline gelecek ve buna bağlı olarak metabolizma hızı da
+              artacaktır. Metabolizma hızının artmasına bağlı olarak da kilo
+              kaybı hızlanacaktır. Tabi ara öğünlerde ne tür besinler
+              tüketildiği çok önemlidir. Genelde ara öğün denildiğinde kişilerin
+              aklına abur cuburlar, yağlı ve şekerli yiyecekler gelir. Fakat ara
+              öğünlerde bu tür besinleri tüketmek kilo almamızla
+              sonuçlanacaktır. Aynı zamanda özellikle şekerli besinleri
+              tüketmek, kan şekerinde ani yükselmelere ve sonrasında ani
+              düşüşlere sebep olacaktır.
             </div>
           </div>
         </div>
@@ -84,18 +89,21 @@ const Main = () => {
               <a href="#dinner">Ve tabi ki Akşam Yemeği</a>
             </div>
             <div className="main-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
-              aliquam fuga maxime consequuntur iusto minima deserunt alias, nemo
-              reprehenderit mollitia nihil similique saepe expedita dicta?
-              Recusandae suscipit voluptatum aliquid ratione dicta, quia harum
-              ipsam eos culpa iste sed. Adipisci laudantium porro dolorum sed
-              blanditiis neque atque corrupti, expedita eveniet asperiores eum
-              exercitationem animi deserunt, dolore, commodi maxime illo iusto
-              ex vel at. Sunt tempore alias voluptatibus earum ipsum dolorem
-              deserunt doloribus, quam distinctio odio aperiam quia suscipit id
-              repudiandae laudantium ab exercitationem voluptate ut eveniet
-              placeat impedit quas, sequi numquam sapiente. Ipsum, nemo qui?
-              Sunt qui doloribus blanditiis nisi! Quod.
+              Kahvaltı, öğle yemeği ve ara öğünlerin ardından sıra akşam
+              yemeğine gelmektedir. Yatmadan önce tüketeceğiniz besinler ise
+              sizlerin kilo kontrolünü etkileyecektir. Kilo vermek ve kilo
+              kontrolünü sağlamak adına akşam yatmadan önce hafif gıdalar
+              tüketilmelidir. Ağır ve yüksek kalorili yiyecekler hem sindirim
+              sisteminizi zorlamakta hem de hareketsiz kalacağınız için kilo
+              almanıza neden olacaktır. Diyete başlayan hemen hemen herkesin
+              ortak problemi akşam yemeği zamanıdır. Kulaktan kulağa dolaşan
+              diyet efsanelerinin en bilineni de akşam 18.00’den sonra bir şey
+              yememektir. Oysa ki birçok kişinin geç saatlere kadar çalıştığını
+              da göz önüne alacak olursak, yemekte buluşmak için plan
+              yaptığımızda buna uymak imkansızdır. Saat 20.00’da buluşalım
+              dediğimizde ya aç kalmamız, ya da asosyal yaşamamız gerekiyor gibi
+              görünüyor. Tabii ki böyle bir yaşamın sürdürebilir olması mümkün
+              değil.
             </div>
           </div>
           <div className="col-md-6">
