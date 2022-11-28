@@ -38,9 +38,10 @@ const DietDetail = () => {
           <div className="dietdetail-container">
             <div className="container">
               <div className="diet-detail-food">
-                <p>Yenilecek besinler</p>
-                <FoodItem />
+                <p>~ Yenilecek besinler ~</p>
               </div>
+              <FoodItem />
+
               {/* <div className="dietdetail-degerler">
                 <p>Karbonhidrat :</p>
                 <p>Protein :</p>
@@ -49,9 +50,6 @@ const DietDetail = () => {
                 <p>Şeker :</p>
                 <p>Tuz :</p>
               </div> */}
-              <div className="dietdetail-description">
-                <p>Diyet Açıklaması</p>
-              </div>
             </div>
           </div>
         </>

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-
+import "./FoodItem.Module.css";
 const FoodItem = () => {
   const [food1, setFood1] = useState();
   const [food2, setFood2] = useState();
@@ -250,6 +250,73 @@ const FoodItem = () => {
             </>
           )}
         </div>
+
+        <div className="total">
+          {food1 && food2 && food3 && food4 && food5 && food6 && (
+            <>
+              <div>
+                Toplam Enerji :{" "}
+                <p>
+                  {food1[0].food.nutrients.ENERC_KCAL +
+                    food2[0].food.nutrients.ENERC_KCAL +
+                    food3[0].food.nutrients.ENERC_KCAL +
+                    food4[0].food.nutrients.ENERC_KCAL +
+                    food5[0].food.nutrients.ENERC_KCAL +
+                    food6[0].food.nutrients.ENERC_KCAL}
+                </p>
+              </div>
+              <div>
+                Toplam Karbonhidrat :{" "}
+                <p>
+                  {food1[0].food.nutrients.CHOCDF +
+                    food2[0].food.nutrients.CHOCDF +
+                    food3[0].food.nutrients.CHOCDF +
+                    food4[0].food.nutrients.CHOCDF +
+                    food5[0].food.nutrients.CHOCDF +
+                    food6[0].food.nutrients.CHOCDF}
+                </p>
+              </div>
+              <div>
+                Toplam Yağ :{" "}
+                <p>
+                  {food1[0].food.nutrients.FAT +
+                    food2[0].food.nutrients.FAT +
+                    food3[0].food.nutrients.FAT +
+                    food4[0].food.nutrients.FAT +
+                    food5[0].food.nutrients.FAT +
+                    food6[0].food.nutrients.FAT}
+                </p>
+              </div>
+              <div>
+                Toplam Lif :{" "}
+                <p>
+                  {food1[0].food.nutrients.FIBTG +
+                    food2[0].food.nutrients.FIBTG +
+                    food3[0].food.nutrients.FIBTG +
+                    food4[0].food.nutrients.FIBTG +
+                    food5[0].food.nutrients.FIBTG +
+                    food6[0].food.nutrients.FIBTG}
+                </p>
+              </div>
+              <div>
+                Toplam Protein :{" "}
+                <p>
+                  {food1[0].food.nutrients.PROCNT +
+                    food2[0].food.nutrients.PROCNT +
+                    food3[0].food.nutrients.PROCNT +
+                    food4[0].food.nutrients.PROCNT +
+                    food5[0].food.nutrients.PROCNT +
+                    food6[0].food.nutrients.PROCNT}
+                </p>
+              </div>
+            </>
+          )}
+        </div>
+        {listdetail && (
+          <div className="description">
+            <p>{listdetail[0].description}</p>
+          </div>
+        )}
       </>
     </>
   );

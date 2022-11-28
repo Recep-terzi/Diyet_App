@@ -8,9 +8,7 @@
   border-bottom: 2px solid #000;
   padding-bottom: 20px;
 }
-.diet-detail-food {
-  margin-top: 40px;
-  font-size: 30px;
+.diet-detail-food:first-child {
   font-weight: bold;
 }
 .food {
@@ -23,7 +21,9 @@
 }
 .food-card img {
   width: 100%;
-  border-radius: 30px;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .food-detail-title {
   text-align: center;
@@ -48,15 +48,8 @@
 }
 
 .dietdetail-description p {
-  margin-top: 40px;
-  font-size: 30px;
+  margin-top: 20px;
+  font-size: 40px;
   font-weight: bold;
-}
-.dietdetail-description p:last-child {
-  font-size: 20px;
-  margin-top: 10px;
-  font-weight: bold;
-}
-.dietdetail-degerler p {
-  font-weight: bold;
+  text-align: start;
 }
