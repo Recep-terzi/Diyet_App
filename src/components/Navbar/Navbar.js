@@ -76,6 +76,17 @@ const Navbar = () => {
             </li>{" "}
             <li className="nav-item">
               <NavLink
+                to="/kitle"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-links"
+                }
+                onClick={click ? handleClick : null}
+              >
+                Vücut Kitle
+              </NavLink>
+            </li>{" "}
+            <li className="nav-item">
+              <NavLink
                 to="/contact"
                 className={({ isActive }) =>
                   isActive ? activeClassName : "nav-links"
