@@ -15,8 +15,6 @@
 }
 .diet-list-item:hover {
   background-color: #497d59;
-  margin-top: 10px;
-  transition: 0.5s ease-in-out;
   color: #fff;
 }
 .diet-list-description {

@@ -10,6 +10,7 @@ import Modal from "../Modal/Modal";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { dietList } from "../../redux/dietSlice";
+import { motion } from "framer-motion";
 const DietList = () => {
   const user = useSelector((state) => state.diet.user);
   const [open, setOpen] = React.useState(false);
@@ -116,9 +117,12 @@ const DietList = () => {
                   <div className="diet-list">
                     {dietlist.map((diet) => (
                       <>
-                        <Link
-                          to={`/diet/${diet.id}`}
+                        <motion.a
+                          href={`/diet/${diet.id}`}
                           className="diet-list-item"
+                          whileHover={{
+                            scale: 1.2,
+                          }}
                         >
                           <div className="diet-list-title">{diet.title}</div>
                           <div className="diet-list-description">
@@ -132,7 +136,7 @@ const DietList = () => {
                               <span>Diyet Kalorisi :</span> {diet.calory}
                             </p>
                           </div>
-                        </Link>
+                        </motion.a>
                       </>
                     ))}
                   </div>
