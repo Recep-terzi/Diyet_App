@@ -20,3 +20,43 @@
   font-size: 20px;
   opacity: 0.8;
 }
+.whatsapp-icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+  margin: 20px;
+  padding: 10px;
+  background-color: #fff;
+  text-decoration: none;
+  color: #000;
+  border-radius: 20px;
+  border: 1px solid #497d59;
+}
+.whatsapp-icon-text p:first-child {
+  text-align: center;
+}
+.whatsapp-icon-text p:last-child {
+  margin-top: -20px;
+}
+.whatsapp-icon p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.whatsapp-icon svg {
+  z-index: 10;
+  font-size: 50px;
+  color: #47c757;
+}
+.whatsapp-icon a:hover {
+  background-color: #497d59;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.whatsapp-icon a:hover svg {
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}

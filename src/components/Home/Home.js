@@ -11,6 +11,9 @@ import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   document.body.style.backgroundImage = `none`;
   const user = useSelector((state) => state.diet.user);
@@ -29,6 +32,19 @@ const Home = () => {
         <>
           <ExtraNavbar />
           <Navbar />
+          <div className="whatsapp-icon">
+            <a
+              href="https://wa.me/+905300996739"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IoLogoWhatsapp />
+              <div className="whatsapp-icon-text">
+                <p>İletişim için</p>
+                <p>+90 530 099 67 39</p>
+              </div>
+            </a>
+          </div>
           <div classNameName="home-container container">
             <div id="demo" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-indicators">

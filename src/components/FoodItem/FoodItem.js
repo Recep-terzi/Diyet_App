@@ -314,6 +314,7 @@ const FoodItem = () => {
         </div>
         {listdetail && (
           <div className="description">
+            <div className="description-title">Diyet Açıklaması</div>
             <p>{listdetail[0].description}</p>
           </div>
         )}
