@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Contact from "./components/Contact/Contact";
 import Food from "./components/Food/Food";
 import Home from "./components/Home/Home";
 import Payment from "./components/Payment/Payment";
 import PersonelPage from "./components/PersonelPage/PersonelPage";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase/config";
 import { login, logout } from "./redux/dietSlice";

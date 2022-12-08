@@ -34,7 +34,7 @@ const Navbar = () => {
       <nav className="navbar" onClick={(e) => e.stopPropagation()}>
         <div className="nav-container">
           <NavLink to="/" className="nav-logo">
-            <i class="fa-solid fa-cookie-bite"></i>
+            <i className="fa-solid fa-cookie-bite"></i>
 
             <Typography
               component="div"

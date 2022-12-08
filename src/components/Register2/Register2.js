@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Register2.Module.css";
 import { Link, useNavigate } from "react-router-dom";
 import "animate.css";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../redux/dietSlice";
+import { useSelector } from "react-redux";
 import {
   AiFillInstagram,
   AiFillLinkedin,

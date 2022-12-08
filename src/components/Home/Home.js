@@ -9,15 +9,12 @@ import Main from "../Main/Main";
 import Navbar from "../Navbar/Navbar";
 import ExtraNavbar from "../ExtraNavbar/ExtraNavbar";
 import Footer from "../Footer/Footer";
-import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 const Home = () => {
   document.body.style.backgroundImage = `none`;
-  const user = useSelector((state) => state.diet.user);
   const [loading, setLoading] = useState(true);
-  console.log(user);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);

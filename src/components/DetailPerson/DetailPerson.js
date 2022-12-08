@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import bg from "../../assets/detailperson.png";
 import detailbg from "../../assets/detailbg.jpeg";
-import { person } from "../../redux/dietSlice";
 import Loading from "../Loading/Loading";
 import "./DetailPerson.Module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { db } from "../../firebase/config";
 import { addDoc, collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +21,6 @@ const DetailPerson = () => {
   const [alerji, setAlerji] = useState(false);
   const [evli, setEvli] = useState(false);
   const [özel, setOzel] = useState(false);
-  const dispatch = useDispatch();
   const detailPerson = useSelector((state) => state.diet.personDetail);
   const user = useSelector((state) => state.diet.user);
   const navigate = useNavigate();

@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../redux/dietSlice";
 const Login2 = () => {
   const [loading, setLoading] = useState(true);

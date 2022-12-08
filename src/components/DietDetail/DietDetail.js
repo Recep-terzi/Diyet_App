@@ -1,6 +1,5 @@
-import axios from "axios";
 import { getDoc, doc } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/config";
