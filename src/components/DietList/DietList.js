@@ -11,11 +11,11 @@ import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { dietList } from "../../redux/dietSlice";
 import { motion } from "framer-motion";
+import Loading from "../Loading/Loading";
 const DietList = () => {
   const user = useSelector((state) => state.diet.user);
   const [open, setOpen] = React.useState(false);
-  const [category, setCategory] = useState();
-
+  const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState();
   const dispatch = useDispatch();
   const dietlist = useSelector((state) => state.diet.dietList);
@@ -45,127 +45,144 @@ const DietList = () => {
   const allItem = () => {
     setFilter(dietlist);
   };
-  console.log(filter);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
     <>
-      <ExtraNavbar />
-      <Navbar />
-      {user ? (
+      {loading && (
         <>
-          <div className="dietlist-container">
-            <div className="container">
-              <div className="dietlist-title">~ Diyet Listeleri ~</div>
-              <div className="filter">
-                <button onClick={() => allItem()}>Hepsi</button>
-                <button onClick={() => filterItem("Kahvaltı")}>
-                  Sabah - Kahvaltı
-                </button>
-                <button onClick={() => filterItem("Öğle Yemeği")}>
-                  Öğle Yemeği
-                </button>
-                <button onClick={() => filterItem("Akşam Yemeği")}>
-                  Akşam Yemeği
-                </button>
-                {user ? (
-                  <>
-                    {user.email === "recepterzi-67@hotmail.com" && (
-                      <>
-                        <Modal
-                          handleClickOpen={handleClickOpen}
-                          open={open}
-                          setOpen={setOpen}
-                        />
-                        <button onClick={handleClickOpen}>
-                          Diyet listesi oluştur
-                        </button>
-                      </>
-                    )}
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-
-              {filter ? (
-                <>
-                  <div className="diet-list">
-                    {filter.map((diet) => (
-                      <>
-                        <Link
-                          to={`/diet/${diet.id}`}
-                          className="diet-list-item"
-                        >
-                          <div className="diet-list-title">{diet.title}</div>
-                          <div className="diet-list-description">
-                            <p>
-                              <span>Diyet Tipi :</span> {diet.type}
-                            </p>
-                            <p>
-                              <span>Diyet Zamanı : </span> {diet.time}
-                            </p>
-                            <p>
-                              <span>Diyet Kalorisi :</span> {diet.calory}
-                            </p>
-                          </div>
-                        </Link>
-                      </>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="diet-list">
-                    {dietlist.map((diet) => (
-                      <>
-                        <motion.a
-                          href={`/diet/${diet.id}`}
-                          className="diet-list-item"
-                          whileHover={{
-                            scale: 1.2,
-                          }}
-                        >
-                          <div className="diet-list-title">{diet.title}</div>
-                          <div className="diet-list-description">
-                            <p>
-                              <span>Diyet Tipi :</span> {diet.type}
-                            </p>
-                            <p>
-                              <span>Diyet Zamanı : </span> {diet.time}
-                            </p>
-                            <p>
-                              <span>Diyet Kalorisi :</span> {diet.calory}
-                            </p>
-                          </div>
-                        </motion.a>
-                      </>
-                    ))}
-                  </div>
-                </>
-              )}
-
-              {dietlist.length === 0 && (
-                <>
-                  <div className="dietlist-err">
-                    Diyet listeleri bilgileriniz bulunmamıştır. Lütfen
-                    diyetisyen ile iletişime geçiniz.
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="dietlist-notuser">
-            <p>
-              Özel diyet listelerinizi görmek, diyet listenizi takip etmek ve
-              diyet listelerini daha detaylı görmek için{" "}
-              <Link to="/login2"> giriş yapınız.</Link>
-            </p>
-          </div>
+          <Loading />
         </>
       )}
-      <Footer />
+      {!loading && (
+        <>
+          <ExtraNavbar />
+          <Navbar />
+          {user ? (
+            <>
+              <div className="dietlist-container">
+                <div className="container">
+                  <div className="dietlist-title">~ Diyet Listeleri ~</div>
+                  <div className="filter">
+                    <button onClick={() => allItem()}>Hepsi</button>
+                    <button onClick={() => filterItem("Kahvaltı")}>
+                      Sabah - Kahvaltı
+                    </button>
+                    <button onClick={() => filterItem("Öğle Yemeği")}>
+                      Öğle Yemeği
+                    </button>
+                    <button onClick={() => filterItem("Akşam Yemeği")}>
+                      Akşam Yemeği
+                    </button>
+                    {user ? (
+                      <>
+                        {user.email === "recepterzi-67@hotmail.com" && (
+                          <>
+                            <Modal
+                              handleClickOpen={handleClickOpen}
+                              open={open}
+                              setOpen={setOpen}
+                            />
+                            <button onClick={handleClickOpen}>
+                              Diyet listesi oluştur
+                            </button>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+
+                  {filter ? (
+                    <>
+                      <div className="diet-list">
+                        {filter.map((diet) => (
+                          <>
+                            <Link
+                              to={`/diet/${diet.id}`}
+                              className="diet-list-item"
+                            >
+                              <div className="diet-list-title">
+                                {diet.title}
+                              </div>
+                              <div className="diet-list-description">
+                                <p>
+                                  <span>Diyet Tipi :</span> {diet.type}
+                                </p>
+                                <p>
+                                  <span>Diyet Zamanı : </span> {diet.time}
+                                </p>
+                                <p>
+                                  <span>Diyet Kalorisi :</span> {diet.calory}
+                                </p>
+                              </div>
+                            </Link>
+                          </>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="diet-list">
+                        {dietlist.map((diet) => (
+                          <>
+                            <motion.a
+                              href={`/diet/${diet.id}`}
+                              className="diet-list-item"
+                              whileHover={{
+                                scale: 1.2,
+                              }}
+                            >
+                              <div className="diet-list-title">
+                                {diet.title}
+                              </div>
+                              <div className="diet-list-description">
+                                <p>
+                                  <span>Diyet Tipi :</span> {diet.type}
+                                </p>
+                                <p>
+                                  <span>Diyet Zamanı : </span> {diet.time}
+                                </p>
+                                <p>
+                                  <span>Diyet Kalorisi :</span> {diet.calory}
+                                </p>
+                              </div>
+                            </motion.a>
+                          </>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  {dietlist.length === 0 && (
+                    <>
+                      <div className="dietlist-err">
+                        Diyet listeleri bilgileriniz bulunmamıştır. Lütfen
+                        diyetisyen ile iletişime geçiniz.
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="dietlist-notuser">
+                <p>
+                  Özel diyet listelerinizi görmek, diyet listenizi takip etmek
+                  ve diyet listelerini daha detaylı görmek için{" "}
+                  <Link to="/login2"> giriş yapınız.</Link>
+                </p>
+              </div>
+            </>
+          )}
+          <Footer />
+        </>
+      )}
     </>
   );
 };
