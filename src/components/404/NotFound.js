@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./NotFound.Module.css";
 import img from "../../assets/404.png";
-import { Link } from "react-router-dom";
 const NotFound = () => {
   useEffect(() => {
     document.body.style.backgroundColor = "#497D59";
