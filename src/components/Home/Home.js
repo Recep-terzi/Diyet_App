@@ -12,7 +12,6 @@ import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import Loading from "../Loading/Loading";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   document.body.style.backgroundImage = `none`;
