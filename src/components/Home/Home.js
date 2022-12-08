@@ -33,7 +33,7 @@ const Home = () => {
           <Navbar />
           <div className="whatsapp-icon">
             <a
-              href="https://wa.me/+905300996739"
+              href="https://api.whatsapp.com/send?phone=905300996739"
               target="_blank"
               rel="noreferrer"
             >
@@ -83,10 +83,9 @@ const Home = () => {
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src={main1}
+                    src={main4}
                     alt="Los Angeles"
                     className="d-block w-100 diet11-setting"
-                    style={{ paddingTop: "30px" }}
                   />
                 </div>
                 <div className="carousel-item">
@@ -96,7 +95,12 @@ const Home = () => {
                   <img src={main3} alt="New York" className="d-block w-100" />
                 </div>
                 <div className="carousel-item">
-                  <img src={main4} alt="New York" className="d-block w-100" />
+                  <img
+                    src={main1}
+                    alt="New York"
+                    className="d-block w-100"
+                    style={{ paddingTop: "30px" }}
+                  />
                 </div>
 
                 <div className="carousel-item">
