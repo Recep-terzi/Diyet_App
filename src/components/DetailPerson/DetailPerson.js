@@ -5,7 +5,7 @@ import "./DetailPerson.Module.css";
 import { useSelector } from "react-redux";
 import { db } from "../../firebase/config";
 import { addDoc, collection } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const DetailPerson = () => {
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState();
@@ -219,7 +219,9 @@ const DetailPerson = () => {
               </div>
               <div className="detailperson-button">
                 <button type="submit">Bilgileri ekle</button>
-                <button>İptal</button>
+                <button>
+                  <Link to="/"> İptal </Link>
+                </button>
               </div>
             </form>
           </div>

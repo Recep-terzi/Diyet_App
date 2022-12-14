@@ -115,3 +115,8 @@ input::-webkit-inner-spin-button {
 .name-surname .surname {
   margin-left: 5px;
 }
+
+.detailperson-button button:last-child a {
+  color: #fff;
+  text-decoration: none;
+}
