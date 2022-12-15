@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./DietList.Module.css";
 import Modal from "../Modal/Modal";
-
+import { BsFillCalendarWeekFill } from "react-icons/bs";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { dietList } from "../../redux/dietSlice";
@@ -26,6 +26,10 @@ const DietList = () => {
   const filterItem = (category) => {
     const a = dietlist.filter((x) => x.title === category);
     setFilter(a);
+  };
+  const filterItem2 = (hafta) => {
+    const b = dietlist.filter((x) => x.hafta === hafta);
+    setFilter(b);
   };
   const allItem = () => {
     setFilter(dietlist);
@@ -94,71 +98,98 @@ const DietList = () => {
                     )}
                   </div>
 
-                  {filter ? (
-                    <>
-                      <div className="diet-list">
-                        {filter.map((diet) => (
-                          <>
-                            <Link
-                              to={`/diet/${diet.id}`}
-                              className="diet-list-item"
-                            >
-                              <div className="diet-list-title">
-                                {diet.title}
-                              </div>
-                              <div className="diet-list-description">
-                                <p>
-                                  <span>Diyet Tipi :</span> {diet.type}
-                                </p>
-                                <p>
-                                  <span>Diyet Zamanı : </span> {diet.time}
-                                </p>
-                                <p>
-                                  <span>Diyet Kalorisi :</span> {diet.calory}
-                                </p>
-                              </div>
-                            </Link>
-                          </>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="diet-list">
-                        {dietlist.map((diet) => (
-                          <>
-                            <motion.div
-                              className="diet-list-item"
-                              whileHover={{
-                                scale: 1.2,
-                              }}
-                            >
-                              <a
-                                className="diet-list-url"
-                                href={`/diet/${diet.id}`}
-                              >
-                                <div className="diet-list-title">
-                                  {diet.title}
-                                </div>
-                                <div className="diet-list-description">
-                                  <p>
-                                    <span>Diyet Tipi :</span> {diet.type}
-                                  </p>
-                                  <p>
-                                    <span>Diyet Zamanı : </span> {diet.time}
-                                  </p>
-                                  <p>
-                                    <span>Diyet Kalorisi :</span> {diet.calory}
-                                  </p>
-                                </div>
-                              </a>
-                            </motion.div>
-                          </>
-                        ))}
-                      </div>
-                    </>
-                  )}
+                  <div className="dietlist-flex">
+                    <div className="filter-menu-diet-list">
+                      <p>Zamansal filtreleme</p>
+                      <ul>
+                        <li onClick={() => filterItem2("1.Hafta")}>
+                          <BsFillCalendarWeekFill />
+                          1.Hafta
+                        </li>
+                        <li onClick={() => filterItem2("2.Hafta")}>
+                          <BsFillCalendarWeekFill />
+                          2.Hafta
+                        </li>
+                        <li onClick={() => filterItem2("3.Hafta")}>
+                          <BsFillCalendarWeekFill />
+                          3.Hafta
+                        </li>
+                        <li onClick={() => filterItem2("4.Hafta")}>
+                          <BsFillCalendarWeekFill />
+                          4.Hafta
+                        </li>
+                      </ul>
+                    </div>
 
+                    <div className="main-dietlist">
+                      {filter ? (
+                        <>
+                          <div className="diet-list">
+                            {filter.map((diet) => (
+                              <>
+                                <Link
+                                  to={`/diet/${diet.id}`}
+                                  className="diet-list-item"
+                                >
+                                  <div className="diet-list-title">
+                                    {diet.title}
+                                  </div>
+                                  <div className="diet-list-description">
+                                    <p>
+                                      <span>Diyet Tipi :</span> {diet.type}
+                                    </p>
+                                    <p>
+                                      <span>Diyet Zamanı : </span> {diet.time}
+                                    </p>
+                                    <p>
+                                      <span>Diyet Kalorisi :</span>{" "}
+                                      {diet.calory}
+                                    </p>
+                                  </div>
+                                </Link>
+                              </>
+                            ))}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="diet-list">
+                            {dietlist.map((diet) => (
+                              <>
+                                <motion.div
+                                  className="diet-list-item"
+                                  whileHover={{
+                                    scale: 1.2,
+                                  }}
+                                >
+                                  <a
+                                    className="diet-list-url"
+                                    href={`/diet/${diet.id}`}
+                                  >
+                                    <div className="diet-list-title">
+                                      {diet.title}
+                                    </div>
+                                    <div className="diet-list-description">
+                                      <p>
+                                        <span>Diyet Tipi :</span> {diet.type}
+                                      </p>
+                                      <p>
+                                        <span>Diyet Zamanı : </span> {diet.time}
+                                      </p>
+                                      <p>
+                                        <span>Diyet Kalorisi :</span>{" "}
+                                        {diet.calory}
+                                      </p>
+                                    </div>
+                                  </a>
+                                </motion.div>
+                              </>
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </div>
                   {dietlist.length === 0 && (
                     <>
                       <div className="dietlist-err">
