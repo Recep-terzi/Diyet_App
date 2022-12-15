@@ -53,3 +53,43 @@
   font-weight: bold;
   text-align: start;
 }
+
+.diet-detail-description {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.diet-detail-description .description {
+  flex: 2;
+}
+.diet-detail-description .update-diet-detail {
+  flex: 1;
+}
+.diet-list-account {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.diet-list-account label {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+.diet-list-account input {
+  width: 100%;
+  border: none;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 2px 10px 2px 10px;
+}
+.diet-list-account button {
+  border: none;
+  background-color: #497d59;
+  color: #fff;
+  border-radius: 10px;
+}
+.diet-list-account button:hover {
+  background-color: #9cc069;
+  transition: 0.5s ease-in-out;
+  color: #000;
+}

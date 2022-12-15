@@ -17,6 +17,12 @@
   background-color: #497d59;
   color: #fff;
 }
+.diet-list-item:hover .diet-list-account button {
+  border: 1px solid #000;
+}
+.diet-list-item:hover .diet-list-url {
+  color: #fff;
+}
 .diet-list-description {
   margin-top: 25px;
 }

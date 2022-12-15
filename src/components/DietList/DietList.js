@@ -7,7 +7,14 @@ import Navbar from "../Navbar/Navbar";
 import "./DietList.Module.css";
 import Modal from "../Modal/Modal";
 
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  query,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { dietList } from "../../redux/dietSlice";
 import { motion } from "framer-motion";
@@ -22,21 +29,6 @@ const DietList = () => {
   const handleClickOpen = () => {
     setOpen(true);
   };
-  useEffect(() => {
-    const ref = collection(db, "dietList");
-    const q = query(ref, where("email", "==", user?.email));
-    const unsub = onSnapshot(q, (snap) => {
-      dispatch(
-        dietList(
-          snap.docs.map((doc) => ({
-            ...doc.data(),
-            id: doc.id,
-          }))
-        )
-      );
-    });
-    return unsub;
-  }, [dispatch, user]);
 
   const filterItem = (category) => {
     const a = dietlist.filter((x) => x.title === category);
@@ -50,13 +42,25 @@ const DietList = () => {
       setLoading(false);
     }, 2000);
   }, []);
+
+  useEffect(() => {
+    const ref = collection(db, "dietList");
+    const q = query(ref, where("email", "==", user ? user?.email : null));
+    const unsub = onSnapshot(q, (snap) => {
+      dispatch(
+        dietList(
+          snap.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+        )
+      );
+    });
+    return unsub;
+  }, [dispatch, user]);
   return (
     <>
-      {loading && (
-        <>
-          <Loading />
-        </>
-      )}
+      {loading && <Loading />}
       {!loading && (
         <>
           <ExtraNavbar />
@@ -93,7 +97,7 @@ const DietList = () => {
                         )}
                       </>
                     ) : (
-                      ""
+                      <></>
                     )}
                   </div>
 
@@ -130,28 +134,32 @@ const DietList = () => {
                       <div className="diet-list">
                         {dietlist.map((diet) => (
                           <>
-                            <motion.a
-                              href={`/diet/${diet.id}`}
+                            <motion.div
                               className="diet-list-item"
                               whileHover={{
                                 scale: 1.2,
                               }}
                             >
-                              <div className="diet-list-title">
-                                {diet.title}
-                              </div>
-                              <div className="diet-list-description">
-                                <p>
-                                  <span>Diyet Tipi :</span> {diet.type}
-                                </p>
-                                <p>
-                                  <span>Diyet Zamanı : </span> {diet.time}
-                                </p>
-                                <p>
-                                  <span>Diyet Kalorisi :</span> {diet.calory}
-                                </p>
-                              </div>
-                            </motion.a>
+                              <a
+                                className="diet-list-url"
+                                href={`/diet/${diet.id}`}
+                              >
+                                <div className="diet-list-title">
+                                  {diet.title}
+                                </div>
+                                <div className="diet-list-description">
+                                  <p>
+                                    <span>Diyet Tipi :</span> {diet.type}
+                                  </p>
+                                  <p>
+                                    <span>Diyet Zamanı : </span> {diet.time}
+                                  </p>
+                                  <p>
+                                    <span>Diyet Kalorisi :</span> {diet.calory}
+                                  </p>
+                                </div>
+                              </a>
+                            </motion.div>
                           </>
                         ))}
                       </div>
@@ -170,15 +178,13 @@ const DietList = () => {
               </div>
             </>
           ) : (
-            <>
-              <div className="dietlist-notuser">
-                <p>
-                  Özel diyet listelerinizi görmek, diyet listenizi takip etmek
-                  ve diyet listelerini daha detaylı görmek için{" "}
-                  <Link to="/login2"> giriş yapınız.</Link>
-                </p>
-              </div>
-            </>
+            <div className="dietlist-notuser">
+              <p>
+                Özel diyet listelerinizi görmek, diyet listenizi takip etmek ve
+                diyet listelerini daha detaylı görmek için{" "}
+                <Link to="/login2"> giriş yapınız.</Link>
+              </p>
+            </div>
           )}
           <Footer />
         </>

@@ -1,5 +1,6 @@
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, updateDoc } from "firebase/firestore";
 import React, { useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase/config";
@@ -13,7 +14,9 @@ const DietDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const listdetail = useSelector((state) => state.diet.listDetail);
+  const [sendEmail, setSendEmail] = useState();
 
+  const user = useSelector((state) => state.diet.user);
   useEffect(() => {
     const ref = doc(db, "dietList", id);
     const data = [];
@@ -26,8 +29,19 @@ const DietDetail = () => {
       dispatch(listDetail(data));
     });
   }, [dispatch, id]);
-
-  console.log(listdetail);
+  const updateChange = (e) => {
+    e.preventDefault();
+    const ref = doc(db, "dietList", id);
+    updateDoc(ref, {
+      email: sendEmail,
+    })
+      .then((res) => {
+        console.log("success");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <>
       <ExtraNavbar />
@@ -53,6 +67,46 @@ const DietDetail = () => {
           </div>
         </>
       )}
+      {/* {listdetail && (
+        <div className="description">
+          <div className="description-title">Diyet Açıklaması</div>
+          <p>{listdetail[0].description}</p>
+        </div>
+      )}
+      <form className="diet-list-account" onSubmit={updateChange}>
+        <label> Kullanıcıya gönder </label>
+        <input
+          type="text"
+          value={sendEmail}
+          onChange={(e) => setSendEmail(e.target.value)}
+        />
+        <button type="submit">Gönder</button>
+      </form> */}
+
+      <div className="container">
+        <div className="diet-detail-description">
+          <div className="description">
+            <div className="description-title">Diyet Açıklaması</div>
+            {listdetail && (
+              <>
+                <p>{listdetail[0].description}</p>
+              </>
+            )}
+          </div>
+          <div className="update-diet-detail">
+            <form className="diet-list-account" onSubmit={updateChange}>
+              <label> Kullanıcıya Gönder </label>
+              <input
+                type="text"
+                value={sendEmail}
+                placeholder="Göndermek istediğiniz kullanıcının eposta adresi"
+                onChange={(e) => setSendEmail(e.target.value)}
+              />
+              <button type="submit">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
       <Footer />
     </>
   );
