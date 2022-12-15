@@ -16,7 +16,6 @@ const DietDetail = () => {
   const listdetail = useSelector((state) => state.diet.listDetail);
   const [sendEmail, setSendEmail] = useState();
 
-  const user = useSelector((state) => state.diet.user);
   useEffect(() => {
     const ref = doc(db, "dietList", id);
     const data = [];

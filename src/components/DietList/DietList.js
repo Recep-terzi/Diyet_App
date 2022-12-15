@@ -7,14 +7,7 @@ import Navbar from "../Navbar/Navbar";
 import "./DietList.Module.css";
 import Modal from "../Modal/Modal";
 
-import {
-  collection,
-  doc,
-  onSnapshot,
-  query,
-  updateDoc,
-  where,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { dietList } from "../../redux/dietSlice";
 import { motion } from "framer-motion";
