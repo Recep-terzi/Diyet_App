@@ -55,6 +55,7 @@ const DietList = () => {
     });
     return unsub;
   }, [dispatch, user]);
+
   return (
     <>
       {loading && <Loading />}
@@ -102,19 +103,31 @@ const DietList = () => {
                     <div className="filter-menu-diet-list">
                       <p>Zamansal filtreleme</p>
                       <ul>
-                        <li onClick={() => filterItem2("1.Hafta")}>
+                        <li
+                          onClick={() => filterItem2("1.Hafta")}
+                          className="filter-li"
+                        >
                           <BsFillCalendarWeekFill />
                           1.Hafta
                         </li>
-                        <li onClick={() => filterItem2("2.Hafta")}>
+                        <li
+                          onClick={() => filterItem2("2.Hafta")}
+                          className="filter-li"
+                        >
                           <BsFillCalendarWeekFill />
                           2.Hafta
                         </li>
-                        <li onClick={() => filterItem2("3.Hafta")}>
+                        <li
+                          onClick={() => filterItem2("3.Hafta")}
+                          className="filter-li"
+                        >
                           <BsFillCalendarWeekFill />
                           3.Hafta
                         </li>
-                        <li onClick={() => filterItem2("4.Hafta")}>
+                        <li
+                          onClick={() => filterItem2("4.Hafta")}
+                          className="filter-li"
+                        >
                           <BsFillCalendarWeekFill />
                           4.Hafta
                         </li>

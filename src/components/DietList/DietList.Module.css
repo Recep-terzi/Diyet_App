@@ -3,7 +3,7 @@
 }
 .diet-list {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto;
 }
 
 .diet-list-item {
@@ -164,4 +164,7 @@
 }
 .main-dietlist {
   flex: 7;
+}
+.active {
+  border-color: #497d59;
 }
